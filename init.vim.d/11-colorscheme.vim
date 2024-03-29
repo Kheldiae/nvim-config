@@ -49,8 +49,8 @@ function SetColor()
     hi BufferCurrentSign    guibg=NONE
 
     " CmdLine shennanigans
-    hi NoiceCmdlinePopupBorder  guifg=#292b2f
-    hi NoiceCmdlinePopupTitle   guifg=#292b2f
+    hi NoiceCmdlinePopupBorder  guifg=#8e6d4f
+    hi NoiceCmdlinePopupTitle   guifg=#8e6d4f
     hi NoiceCmdlineIcon         guifg=#918154
 
     " LuaBar translucent ends

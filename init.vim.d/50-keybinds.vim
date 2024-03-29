@@ -37,9 +37,9 @@ nnoremap <silent> <leader>tt            :Vista<CR>
 
 nnoremap <silent> <leader>td            :Ags TODO<CR>
 
-nnoremap <silent> <leader>st            :SourcetrailStartServer<CR>
-nnoremap <silent> <leader>ss            :SourcetrailActivateToken<CR>
-nnoremap <silent> <leader>sr            :SourcetrailRefresh<CR>
+nnoremap <silent> <leader>strt          :SourcetrailStartServer<CR>
+nnoremap <silent> <leader>satk          :SourcetrailActivateToken<CR>
+nnoremap <silent> <leader>stfr          :SourcetrailRefresh<CR>
 
 nnoremap <silent> <leader>hw            :Http<CR>
 
