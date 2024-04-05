@@ -85,80 +85,124 @@ function setupCmakeIntegration()
 end
 
 -- Python 3
-lsp_with_coq(lsp.pylsp,         { cmd = nix:shell("python3Packages.python-lsp-server"
-                                        , { "pylsp" })
-                                })
+lsp_with_coq(lsp.pylsp, {
+    cmd = nix:shell("python3Packages.python-lsp-server", { "pylsp" })
+})
+
 -- Elm
-lsp_with_coq(lsp.elmls,         { cmd = nix:shell("elmPackages.elm-language-server"
-                                        , { "elm-language-server" })
-                                })
+lsp_with_coq(lsp.elmls, {
+    cmd = nix:shell("elmPackages.elm-language-server", {
+        "elm-language-server"
+    })
+})
+
 -- Rust
-lsp_with_coq(lsp.rust_analyzer, { cmd = nix:shell("rust-analyzer", {"rust-analyzer"}) })
+lsp_with_coq(lsp.rust_analyzer, {
+    cmd = nix:shell("rust-analyzer", {"rust-analyzer"})
+})
+
 -- Haskell
-lsp_with_coq(lsp.hls,           { cmd = nix:shell("haskell-language-server"
-                                        , {"haskell-language-server-wrapper", "--lsp"})
-                                , root_dir = function(fname)
-                                    return util.find_git_ancestor(fname)
-                                        or util.root_pattern("*.cabal", "stack.yaml", "package.yaml", "default.nix", "shell.nix")(fname)
-                                  end
-                                })
+lsp_with_coq(lsp.hls, {
+    cmd = nix:shell("haskell-language-server", {
+        "haskell-language-server-wrapper", "--lsp"
+    }),
+    root_dir = function(fname)
+        return util.find_git_ancestor(fname)
+        or util.root_pattern("*.cabal", "stack.yaml", "package.yaml", "default.nix", "shell.nix")(fname)
+    end
+})
+
 -- C/C++
-lsp_with_coq(lsp.ccls,          { cmd = nix:shell("ccls", {"ccls"})
-                                , init_options =
-                                  { highlight = { lsRanges = true }
-                                  , compilationDatabaseDirectory =
-                                        setupCmakeIntegration()
-                                  }
-                                , filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "c.doxygen", "cpp.doxygen", "cuda.doxygen" }
-                                })
+lsp_with_coq(lsp.ccls, {
+    cmd = nix:shell("ccls", {"ccls"}),
+    init_options = {
+        highlight = { lsRanges = true },
+        compilationDatabaseDirectory = setupCmakeIntegration()
+    },
+    filetypes = {
+        "c", "cpp", "objc", "objcpp",
+        "cuda", "c.doxygen", "cpp.doxygen", "cuda.doxygen"
+    }
+})
 -- CMake
-lsp_with_coq(lsp.cmake,         { cmd = nix:shell("cmake-language-server"
-                                        , {"cmake-language-server"})
-                                })
+lsp_with_coq(lsp.cmake, {
+    cmd = nix:shell("cmake-language-server", { "cmake-language-server" })
+})
+
 -- JSonnet
-lsp_with_coq(lsp.jsonnet_ls,    { cmd = nix:shell("jsonnet-language-server", {"jsonnet-language-server"}) })
+lsp_with_coq(lsp.jsonnet_ls, {
+    cmd = nix:shell("jsonnet-language-server", {"jsonnet-language-server"})
+})
+
 -- OCaML
-lsp_with_coq(lsp.ocamllsp,      { cmd = nix:shell("ocamlPackages.ocaml-lsp", {"ocamllsp"})
-                                , cmd_env =
-                                  { OCAMLLSP_SEMANTIC_HIGHLIGHTING = "full/delta"
-                                  }
-                                })
+lsp_with_coq(lsp.ocamllsp, {
+    cmd = nix:shell("ocamlPackages.ocaml-lsp", {"ocamllsp"}),
+    cmd_env = { OCAMLLSP_SEMANTIC_HIGHLIGHTING = "full/delta" }
+})
+
 -- Vimscript
-lsp_with_coq(lsp.vimls,         { cmd = nix:shell("nodePackages.vim-language-server"
-                                        , {"vim-language-server", "--stdio"})
-                                })
+lsp_with_coq(lsp.vimls, {
+    cmd = nix:shell("nodePackages.vim-language-server", {
+        "vim-language-server", "--stdio"
+    })
+})
+
 -- PureScript
-lsp_with_coq(lsp.purescriptls,  { cmd = nix:shell("nodePackages.purescript-language-server"
-                                        , {"purescript-language-server", "--stdio"})
-                                })
+lsp_with_coq(lsp.purescriptls, {
+    cmd = nix:shell("nodePackages.purescript-language-server", {
+        "purescript-language-server", "--stdio"
+    })
+})
+
 -- Nix
-lsp_with_coq(lsp.nixd,          { cmd = nix:shell("nixd", {"nixd"}) })
+lsp_with_coq(lsp.nixd, { cmd = nix:shell("nixd", {"nixd"}) })
+
 -- LaTeX
-lsp_with_coq(lsp.texlab,        { cmd = nix:shell("texlab", {"texlab"}) })
+lsp_with_coq(lsp.texlab, { cmd = nix:shell("texlab", {"texlab"}) })
+
 -- Javascript and TypeScript
-lsp_with_coq(lsp.tsserver,      { cmd = nix:shell("nodePackages.typescript-language-server", {"typescript-language-server", "--stdio"}) })
+lsp_with_coq(lsp.tsserver, {
+    cmd = nix:shell("nodePackages.typescript-language-server", {
+        "typescript-language-server", "--stdio"
+    })
+})
+
 -- CSS
-lsp_with_coq(lsp.cssls,         { cmd = nix:shell("nodePackages.vscode-css-languageserver-bin"
-                                        , { "css-languageserver", "--stdio" })
-                                })
+lsp_with_coq(lsp.cssls, {
+    cmd = nix:shell("nodePackages.vscode-css-languageserver-bin", {
+        "css-languageserver", "--stdio"
+    })
+})
+
 -- Marksman knowledge base
-lsp_with_coq(lsp.marksman,      { cmd = nix:shell("marksman", { "marksman", "server" })
-                                , filetypes = { "markdown", "markdown.mdx", "pandoc" }
-                                })
+lsp_with_coq(lsp.marksman, {
+    cmd = nix:shell("marksman", { "marksman", "server" }),
+    filetypes = { "markdown", "markdown.mdx", "pandoc" }
+})
+
+-- Cucumber
+-- TODO finish cucumberlsp build
+
 -- Java
-lsp_with_coq(lsp.jdtls,         { cmd = nix:shell("jdt-language-server"
-                                        , {"jdt-language-server", "-configuration", os.getenv("HOME").."/.cache/jdtls/config", "-data", os.getenv("HOME").."/.cache/jdtls/workspace"})
-                                , cmd_env = { GRADLE_HOME = os.getenv("GRADLE_HOME") }
-                                , root_dir = util.root_pattern('build.gradle', 'build.gradle.kt', 'pom.xml', '.git', '.javals')
-                                , init_options = {
-                                    bundles = {
-                                      nix:path("vscode-extensions.vscjava.vscode-java-debug", "/share/vscode/extensions/vscjava.vscode-java-debug/server/com.microsoft.java.debug.plugin-0.44.0.jar")
-                                    }
-                                  }
-                                , on_attach = function(cl, bn)
-                                    jdtls.setup_dap({ hotcodereplace = 'auto'})
-                                  end
-                                })
+lsp_with_coq(lsp.jdtls, {
+    cmd = nix:shell("jdt-language-server", {
+        "jdt-language-server", "-configuration",
+        os.getenv("HOME").."/.cache/jdtls/config", "-data",
+        os.getenv("HOME").."/.cache/jdtls/workspace"
+    }),
+    cmd_env = { GRADLE_HOME = os.getenv("GRADLE_HOME") },
+    root_dir = util.root_pattern('build.gradle', 'build.gradle.kt', 'pom.xml', '.git', '.javals')
+    , init_options = {
+        bundles = {
+            nix:path("vscode-extensions.vscjava.vscode-java-debug",
+            "/share/vscode/extensions/vscjava.vscode-java-debug/server/com.microsoft.java.debug.plugin-0.44.0.jar")
+        }
+    },
+    on_attach = function(cl, bn)
+        jdtls.setup_dap({ hotcodereplace = 'auto'})
+    end
+})
+
 -- Coq (the theorem language)
 coql.setup {
   lsp = {

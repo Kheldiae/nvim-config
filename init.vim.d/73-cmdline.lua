@@ -1,6 +1,5 @@
 --
--- Extended configuration of Folke's Noice plugin. This will require yet
--- another color dictionnary.
+-- Extended configuration of Folke's Noice plugin.
 --
 
 -- Noice section

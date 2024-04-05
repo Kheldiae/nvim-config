@@ -19,9 +19,10 @@ function lsp_with_coq(server, params)
 end
 
 -- Marksman knowledge base
-lsp_with_coq(lsp.marksman,  { cmd = nix:shell("marksman", { "marksman", "server" })
-                            , filetypes = { "markdown", "markdown.mdx", "pandoc" }
-                            })
+lsp_with_coq(lsp.marksman, {
+    cmd = nix:shell("marksman", { "marksman", "server" }),
+    filetypes = { "markdown", "markdown.mdx", "pandoc" }
+})
 
 require 'coq_3p' {
     { src = "repl",

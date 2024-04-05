@@ -1,16 +1,20 @@
-{ description = "Dependency locks for my Neovim config";
+{
+  description = "Dependency locks for my Neovim config";
 
-  inputs."nixpkgs".url = github:NixOS/nixpkgs;
+  inputs = {
+    nixpkgs.url = github:NixOS/nixpkgs;
+  };
 
   outputs = { self, nixpkgs, flake-utils, ... }:
   flake-utils.lib.eachDefaultSystem
     (system:
     let
-      pkgs = import nixpkgs
-        { inherit system;
-          config.allowUnfree = true;
-          overlays = [];
-        };
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+        overlays = [];
+      };
+
       py3 = pkgs.python3.withPackages (ps: with ps;
         [ pynvim
           jupyter_client
@@ -37,8 +41,8 @@
             "--prefix" "LUA_CPATH" ";" luaCPath
           ];
         };
-    in
-    { legacyPackages = pkgs;
+    in {
+      legacyPackages = pkgs;
       packages.default = self.packages.${system}.neovim;
       packages."neovim" = pkgs.symlinkJoin {
         inherit (wrappedNeovim) name meta;
@@ -48,6 +52,7 @@
           chmod +x $out/bin/goyo
         '';
       };
+
       apps.neovim = {
         type = "app";
         program = "${self.packages.${system}.neovim}/bin/nvim";
