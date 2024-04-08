@@ -9,8 +9,9 @@
 " You can put this file in your .vim/syntax, and you have to modify (or create)
 " .vim/after/syntax/c.vim and copy these lines :
 "
-syn region framacComment1 matchgroup=framacComment start="/\*@"rs=e-1 end="\*/"
-syn region framacComment2 matchgroup=framacComment start="//@"rs=e-1 end="\n"
+" syn include @FC syntax/framac.vim
+syn region framacComment1 matchgroup=framacComment start="/\*@"rs=e-1 end="\*/" contains=framacStart,framacKeyword,framacKeyword2,framacError
+syn region framacComment2 matchgroup=framacComment start="//@"rs=e-1 end="\n" contains=framacStart,framacKeyword,framacKeyword2,framacError
 " 
 " so you use the normal C syntax highlighting, 
 " and enhance it with Frama-C annotations highlighting.
