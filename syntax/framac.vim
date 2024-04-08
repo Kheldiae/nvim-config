@@ -9,20 +9,22 @@
 " You can put this file in your .vim/syntax, and you have to modify (or create)
 " .vim/after/syntax/c.vim and copy these lines :
 "
-" syn include @FC syntax/framac.vim
-syn region framacComment1 matchgroup=framacComment start="/\*@"rs=e-1 end="\*/" contains=framacStart,framacKeyword,framacKeyword2,framacError
-syn region framacComment2 matchgroup=framacComment start="//@"rs=e-1 end="\n" contains=framacStart,framacKeyword,framacKeyword2,framacError
-" 
+if !exists("b:framac_loaded")
+let b:framac_loaded=1
+
+syn include @FC syntax/framac.vim
+syn region framacComment1 matchgroup=framacComment start="/\*@"rs=e-1 end="\*/" contains=@FC
+syn region framacComment2 matchgroup=framacComment start="//@"rs=e-1 end="\n" contains=@FC
+"
 " so you use the normal C syntax highlighting, 
 " and enhance it with Frama-C annotations highlighting.
-"-------------------------------------------------------------------------------
 
-syn match framacStart /@/ 
+else
+
+syn match framacStart /@/
 
 syn region framacCommentInComment start="//" end="\n" containedin=framacComment1 contained
 syn region framacCommentInComment excludenl start="//" end="$" containedin=framacComment2 contained
-
-"-------------------------------------------------------------------------------
 
 syn match framacKeyword /complete behaviors/ 
 syn match framacKeyword /disjoint behaviors/ 
@@ -67,13 +69,9 @@ syn keyword framacKeyword2 /Pre/
 syn keyword framacKeyword2 /Post/ 
 syn keyword framacKeyword2 /Old/ 
 
-"-------------------------------------------------------------------------------
-
 syn match framacEqError "[^=!<>]=[^=]" 
 
-"-------------------------------------------------------------------------------
-
-hi framacStart guibg=bg guifg=Orange gui=bold
+hi framacStart guibg=None guifg=Orange gui=bold
 
 hi link framacEqError framacError
 hi link framacError Error
@@ -82,9 +80,9 @@ hi link framacCommentInComment Comment
 
 hi link framacComment1 framacComment
 hi link framacComment2 framacComment
-hi framacComment  guibg=#fff2db guifg=DimGrey
-hi framacKeyword guibg=#fff2db guifg=Orange gui=underline
+hi framacComment  guibg=None guifg=DimGrey
+hi framacKeyword guibg=None guifg=Orange gui=underline
 
-hi framacKeyword2 guibg=#fff2db guifg=#00b333 gui=bold
+hi framacKeyword2 guibg=None guifg=#00b333 gui=bold
 
-"-------------------------------------------------------------------------------
+endif
