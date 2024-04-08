@@ -39,66 +39,72 @@ Keys  | Action                          | Vim command
 
 The Leader key is set to the exclamation point (`!`) by default. Below are keybindings which start with the Leader key:
 
-Keys  | Action                          | Vim command
-------|---------------------------------|------------
-`q`   | Clear all notifications         |
-`←`   | Focus left buffer               | `<C-w><C-h>`
-`↓`   | Focus buffer below              | `<C-w><C-j>`
-`↑`   | Focus buffer above              | `<C-w><C-k>`
-`→`   | Focus right buffer              | `<C-w><C-l>`
-      |                                 |
-`hw`  | Write buffer as HTTP request    |
-`op`  | Show Color Picker               |
-      |                                 |
-`l…`  | _**Line numbers**_              |
-`la`  | Set line numbers to Absolute    | `:set nornu`
-`lr`  | Set line numbers to Relative    | `:set rnu`
-      |                                 |
-`c…`  | _**Code movement**_             |
-`cD`  | Go to declaration               |
-`cd`  | Go to definition                |
-`ci`  | Go to implementation            |
-`c←`  | Show incoming calls             |
-`c→`  | Show outgoing calls             |
-`cf`  | Apply code formatter            |
-`mv`  | Refactor (rename) symbol        |
-`?`   | Show code actions               | `:CodeActionMenu`
-`!`   | Show diagnostics panel          |
-      |                                 |
-`d…`  | _**Debugger**_                  |
-`db`  | Set breakpoint                  |
-`dc`  | Continue (or start debugger)    |
-`dn`  | Next/Step-Over                  |
-`ds`  | Step/Step-Into                  |
-`dF`  | Browse stack frames             |
-`dS`  | Browse function scopes          |
-`d?`  | Show debug symbol details       |
-      |                                 |
-`g…`  | _**Git conflicts**_             |
-`go`  | Choose our changes              |
-`gt`  | Choose their changes            |
-`gn`  | Choose neither (delete conflict)|
-`ga`  | Choose all changes (merge)      |
-      |                                 |
-`f…`  | _**File browser**_              |
-`fr`  | Refresh files pane              | `:NvimTreeRefresh`
-`ft`  | Toggle files pane               | `:NvimTreeToggle`
-      |                                 |
-`t…`  | _**Tagging**_                   |
-`tt`  | Show symbols pane               | `:Vista`
-`td`  | Search for and list `TODO`s     | `:Ags TODO`
-      |                                 |
-`s…`  | _**[Sourcetrail] integration**_ |
-`st`  | Start Sourcetrail server        |
-`ss`  | Send position to Sourcetrail    |
-`sr`  | Refresh Sourcetrail connection  |
-      |                                 |
-`p…`  | _**PostgreSQL integration**_    |
-`po`  | Open database session           |
-`pi`  | Send one command                |
-`pw`  | Send buffer as commands         |
+Keys    | Action                          | Vim command
+--------|---------------------------------|------------
+`q`     | Clear all notifications         |
+`←`     | Focus left buffer               | `<C-w><C-h>`
+`↓`     | Focus buffer below              | `<C-w><C-j>`
+`↑`     | Focus buffer above              | `<C-w><C-k>`
+`→`     | Focus right buffer              | `<C-w><C-l>`
+        |                                 |
+`hw`    | Write buffer as HTTP request    |
+`op`    | Show Color Picker               |
+        |                                 |
+`l…`    | _**Line numbers**_              |
+`la`    | Set line numbers to Absolute    | `:set nornu`
+`lr`    | Set line numbers to Relative    | `:set rnu`
+        |                                 |
+`c…`    | _**Code movement**_             |
+`cD`    | Go to declaration               |
+`cd`    | Go to definition                |
+`ci`    | Go to implementation            |
+`c←`    | Show incoming calls             |
+`c→`    | Show outgoing calls             |
+`cf`    | Apply code formatter            |
+`yp`    | Apply yapf code formatter       | `:!yapf -i %`
+`mv`    | Refactor (rename) symbol        |
+`?`     | Show code actions               | `:CodeActionMenu`
+`!`     | Show diagnostics panel          |
+        |                                 |
+`d…`    | _**Debugger**_                  |
+`db`    | Set breakpoint                  |
+`dc`    | Continue (or start debugger)    |
+`dn`    | Next/Step-Over                  |
+`ds`    | Step/Step-Into                  |
+`dF`    | Browse stack frames             |
+`dS`    | Browse function scopes          |
+`d?`    | Show debug symbol details       |
+        |                                 |
+`g…`    | _**Git conflicts**_             |
+`go`    | Choose our changes              |
+`gt`    | Choose their changes            |
+`gn`    | Choose neither (delete conflict)|
+`ga`    | Choose all changes (merge)      |
+        |                                 |
+`f…`    | _**File browser**_              |
+`fr`    | Refresh files pane              | `:NvimTreeRefresh`
+`ft`    | Toggle files pane               | `:NvimTreeToggle`
+        |                                 |
+`t…`    | _**Tagging**_                   |
+`tt`    | Show symbols pane               | `:Vista`
+`td`    | Search for and list `TODO`s     | `:Ags TODO`
+        |                                 |
+`st…`   | _**[Sourcetrail] integration**_ |
+`strt`  | Start Sourcetrail server        |
+`satk`  | Send position to Sourcetrail    |
+`stfr`  | Refresh Sourcetrail connection  |
+        |                                 |
 
 This configuration also includes [Visual-Multi] and its keybindings.
 
+## Goyo
+
+This configuration also includes a [Goyo] setup, to have a distraction-free editor built into Neovim. To use it, just run the `goyo` script at the config's root or launch this command :
+
+```shell
+nvim --cmd "let g:startGoyo = 1"
+```
+
 [Sourcetrail]: https://github.com/CoatiSoftware/Sourcetrail
 [Visual-Multi]: https://github.com/mg979/vim-visual-multi
+[Goyo]: https://github.com/
