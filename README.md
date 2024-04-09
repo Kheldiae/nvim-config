@@ -93,7 +93,6 @@ Keys    | Action                          | Vim command
 `strt`  | Start Sourcetrail server        |
 `satk`  | Send position to Sourcetrail    |
 `stfr`  | Refresh Sourcetrail connection  |
-        |                                 |
 
 This configuration also includes [Visual-Multi] and its keybindings.
 
