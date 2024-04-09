@@ -105,6 +105,8 @@ This configuration also includes a [Goyo] setup, to have a distraction-free edit
 nvim --cmd "let g:startGoyo = 1"
 ```
 
+However, if you use the version in my `zsh` config and kitty, you may experience some... Weird things if you put the goyo editor in the background of your terminal.
+
 [Sourcetrail]: https://github.com/CoatiSoftware/Sourcetrail
 [Visual-Multi]: https://github.com/mg979/vim-visual-multi
-[Goyo]: https://github.com/
+[Goyo]: https://github.com/junnegun/goyo.vim

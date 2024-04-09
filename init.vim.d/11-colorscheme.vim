@@ -1,8 +1,8 @@
 " Custom colorscheme definition, needs to be splitted around the 'if' to make
 " sure to be able to hotswap the colorscheme correctly.
 function SetColor()
-
-    if system('zsh -ic _get_theme') =~ 'light' " Rely on zsh script for dark/light
+    " Rely on zsh script for dark/light
+    if system('zsh -ic _get_theme') =~ 'light'
         set background=light
         colorscheme daedrim
 
@@ -12,6 +12,10 @@ function SetColor()
         hi TreesitterContextLineNumber  guibg=#ebebae
         hi TabLineFill                  guibg=#9bb9de
         hi TabLineSel                   guifg=#000000
+        " CmdLine shennanigans
+        hi NoiceCmdlinePopupBorder  guifg=#8e6d4f
+        hi NoiceCmdlinePopupTitle   guifg=#8e6d4f
+        hi NoiceCmdlineIcon         guifg=#918154
     else
         colorscheme daeser
 
@@ -23,6 +27,11 @@ function SetColor()
         hi TabLineSel                   guifg=#292b2f
         hi BufferCurrentMod             guifg=#ffffff
         hi BufferDefaultCurrentMod      guifg=#ffffff
+
+        " CmdLine shennanigans
+        hi NoiceCmdlinePopupBorder  guifg=#8e6d4f
+        hi NoiceCmdlinePopupTitle   guifg=#8e6d4f
+        hi NoiceCmdlineIcon         guifg=#918154
     endif
 
     " Limelight conceal
@@ -47,11 +56,6 @@ function SetColor()
     hi BufferCurrentMod     guibg=#918154
     hi BufferCurrentIcon    guibg=NONE
     hi BufferCurrentSign    guibg=NONE
-
-    " CmdLine shennanigans
-    hi NoiceCmdlinePopupBorder  guifg=#8e6d4f
-    hi NoiceCmdlinePopupTitle   guifg=#8e6d4f
-    hi NoiceCmdlineIcon         guifg=#918154
 
     " LuaBar translucent ends
     hi StatusLine guibg=NONE
