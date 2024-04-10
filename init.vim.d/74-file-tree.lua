@@ -48,8 +48,21 @@ require'nvim-web-devicons'.set_icon {
     -- Snippets files
     snippets = {
         icon = "󰆏",
-        color = "#918154",
-        cterm_color = "142",
+        color = "#926c4c",
+        cterm_color = "130",
         name = "Snippets"
+    },
+    -- Cambalache and GUI files
+    cmb = {
+        icon = "",
+        color = "#00d7ff",
+        cterm_color = "75",
+        name = "Cmb"
+    },
+    ui = {
+        icon = "",
+        color = "5fafff",
+        cterm_color = "45",
+        name = "Ui"
     }
 }

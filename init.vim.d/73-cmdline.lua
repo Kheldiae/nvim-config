@@ -3,6 +3,7 @@
 --
 
 local colPos = 40
+local rowPos = 5
 
 -- Noice section
 require'noice'.setup {
@@ -10,16 +11,16 @@ require'noice'.setup {
     views = {
         cmdline_popup = {
             relative = "editor",
-            position = { row = 5, col = colPos }
+            position = { row = rowPos, col = colPos }
         },
         cmdline_popupmenu = {
             relative = "editor",
-            position = { row = 8, col = colPos - 1 }
+            position = { row = rowPos + 3, col = colPos - 1 }
         },
     },
     messages = {
         view = "mini",
         view_warn = "mini",
         view_error = "notify"
-    },
+    }
 }
