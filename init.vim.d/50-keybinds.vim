@@ -6,16 +6,16 @@ nnoremap <silent> bv                    :BufferPrevious<CR>
 nnoremap <silent> mbn                   :BufferMoveNext<CR>
 nnoremap <silent> mbv                   :BufferMovePrevious<CR>
 nnoremap <silent> bd                    :BufferClose<CR>
-   
+
 nnoremap <silent> ty                    :tabnext<CR>
 nnoremap <silent> tr                    :tabprev<CR>
 nnoremap <silent> tn                    :tabnew<CR>
-   
+
 nnoremap <silent> <leader>la            :set nornu<CR>
 nnoremap <silent> <leader>lr            :set rnu<CR>
-   
+
 nnoremap <silent> <leader>op            :PickColor<CR>
-  
+
 nnoremap <silent> <leader>cD            :lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> <leader>cd            :lua vim.lsp.buf.definition()<CR>
 "        <silent> (shift + *)   

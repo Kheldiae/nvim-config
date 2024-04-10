@@ -8,3 +8,6 @@ spell/*
 
 .nixie
 result
+
+# Testing
+test_files

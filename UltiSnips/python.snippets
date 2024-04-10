@@ -1,0 +1,6 @@
+snippet abstract
+class ${0}:
+	def __init__(self) -> None:
+		if type(self) == ${0}:
+			raise RuntimeError("${0} is an abstract class")
+endsnippet

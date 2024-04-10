@@ -31,35 +31,6 @@ require'fwatch'.watch(os.getenv("XDG_RUNTIME_DIR") .. "/theme",
                 end
     })
 
--- Nvim-Tree config
-require'nvim-tree'.setup {
-    hijack_netrw = true,
-    sync_root_with_cwd = true,
-
-    diagnostics =
-    { enable = true },
-
-    renderer = {
-        group_empty = true,
-        indent_markers = { enable = true },
-        icons = { show = { file = true, folder = true, folder_arrow = true, git = true } }
-    },
-
-    filters = {
-        dotfiles = true,
-        custom = { '^\\.git$', '^\\.cache$', '_secrets.yaml' }
-    },
-
-    git =
-    { ignore = true, },
-
-    view = {
-        width = 30,
-        side = 'left',
-        adaptive_size = false
-    }
-}
-
 -- Trouble diagnostics list config
 require'trouble'.setup {}
 
