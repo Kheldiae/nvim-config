@@ -61,7 +61,7 @@ require'nvim-web-devicons'.set_icon {
     },
     ui = {
         icon = "",
-        color = "5fafff",
+        color = "#5fafff",
         cterm_color = "45",
         name = "Ui"
     }
