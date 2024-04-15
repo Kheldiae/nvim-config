@@ -2,7 +2,7 @@
 -- Extended configuration of Folke's Noice plugin.
 --
 
-local colPos = 40
+local colPos = 39
 local rowPos = 5
 
 -- Noice section

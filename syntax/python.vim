@@ -16,6 +16,8 @@ syn region pythonInterpolation contained
 syn match pythonStringModifier /:\(.[<^=>]\)\?[-+ ]\?#\?0\?[0-9]*[_,]\?\(\.[0-9]*\)\?[bcdeEfFgGnosxX%]\?/ contained containedin=pythonInterpolation
 syn match pythonStringModifier /![sra]/ contained containedin=pythonInterpolation
 
+" TODO add self detection
+
 hi link pythonfString String
 hi link pythonfDocstring String
 hi link pythonStringModifier PreProc
