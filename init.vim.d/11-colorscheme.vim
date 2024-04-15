@@ -75,6 +75,9 @@ function SetColor()
     sign define DiagnosticSignInfo      text=   texthl=DiagnosticSignInfo
     sign define DiagnosticSignOther     text=   texthl=DiagnosticSignOther
 
+    " Python self
+    hi link @variable.builtin cssClassName
+
 endfunction
 
 call SetColor()
