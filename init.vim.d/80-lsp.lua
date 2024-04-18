@@ -252,7 +252,7 @@ dap.adapters.lldb = {
 }
 
 dap.configurations.cpp = {
-    { name = 'Launch',
+    { name = 'Debug - Launch',
       type = 'lldb',
       request = 'launch',
       program = function()
@@ -262,28 +262,23 @@ dap.configurations.cpp = {
       stopOnEntry = true,
       args = {}
     },
-    { name = 'Attach to remote gdb',
+    { name = 'Debug (Attach) - Remote',
       type = 'lldb',
-      request = 'launch',
-      program = function()
-        return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-        end,
+      request = "attach",
       cwd = '${workspaceFolder}',
-      stopOnEntry = true,
-      initCommands = {
-        function()
-            return 'gdb-remote '..vim.fn.input('Remote gdb address: ', '127.0.0.1:1234')
-        end
-      }
+      stopOnEntry = true
     }
 }
 dap.configurations.c = dap.configurations.cpp
 dap.configurations.rust = dap.configurations.cpp
 dap.configurations.java = {
-    { type = 'java';
-      request = 'attach';
-      name = "Debug (Attach) - Remote";
-      hostName = "127.0.0.1";
-      port = 5005;
+    {
+        type = 'java',
+        request = 'attach',
+        name = "Debug (Attach) - Remote",
+        hostName = "127.0.0.1",
+        port = 5005
     }
 }
+
+require'dap-python'.setup('python')

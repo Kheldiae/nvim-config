@@ -66,8 +66,12 @@ Plug 'kyazdani42/nvim-web-devicons'
 
 " Debug adapter protocol
 Plug 'mfussenegger/nvim-dap'
+" Language-specific DAPs
+Plug 'mfussenegger/nvim-dap-python'
+
 " LSP configs
 Plug 'neovim/nvim-lspconfig'
+
 " COQ autocomplete engine
 Plug 'ms-jpq/coq_nvim',         { 'do': ':COQdeps' }
 Plug 'ms-jpq/coq.thirdparty'
