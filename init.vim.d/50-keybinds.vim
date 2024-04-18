@@ -11,6 +11,9 @@ nnoremap <silent> ty                    :tabnext<CR>
 nnoremap <silent> tr                    :tabprev<CR>
 nnoremap <silent> tn                    :tabnew<CR>
 
+" stfu keybinds
+nnoremap <silent> n                     <CR>
+
 nnoremap <silent> <leader>la            :set nornu<CR>
 nnoremap <silent> <leader>lr            :set rnu<CR>
 
@@ -18,7 +21,7 @@ nnoremap <silent> <leader>op            :PickColor<CR>
 
 nnoremap <silent> <leader>cD            :lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> <leader>cd            :lua vim.lsp.buf.definition()<CR>
-"        <silent> (shift + *)   
+"        <silent> (shift + *)
 nnoremap <silent> µ                     :lua vim.lsp.buf.references()<CR>
 nnoremap <silent> <leader>ci            :lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> ?                     :lua vim.lsp.buf.hover()<CR>
@@ -54,7 +57,7 @@ nnoremap <silent> <leader>d?            :lua require"dap.ui.widgets".hover()<CR>
 nnoremap <silent> <leader>go            :GitConflictChooseOurs<CR>
 nnoremap <silent> <leader>gt            :GitConflictChooseTheirs<CR>
 nnoremap <silent> <leader>gn            :GitConflictChooseNone<CR>
-nnoremap <silent> <leader>ga            :GitConflictChooseBoth<CR>
+nnoremap <silent> <leader>gb            :GitConflictChooseBoth<CR>
 
 nnoremap <silent> <leader>q             :lua require"notify".dismiss()<CR>
 
