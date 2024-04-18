@@ -68,8 +68,21 @@ require'nvim-web-devicons'.set_icon {
     -- Sourcetrail files (not ignored by Git)
     srctrlprj = {
         icon = "",
-        color = "#5d0000",
+        color = "#b63a3f",
         cterm_color = "52",
         name = "Srctrlprj"
+    },
+    -- Jsonnet files
+    jsonnet = {
+        icon = "󰘦",
+        color = "#ffd75f",
+        cterm_color = "221",
+        name = "Jsonnet"
+    },
+    libsonnet = {
+        icon = "󰘦",
+        color = "#ffd75f",
+        cterm_color = "221",
+        name = "Libsonnet"
     }
 }

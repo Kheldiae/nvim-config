@@ -12,6 +12,7 @@ function SetColor()
         hi TreesitterContextLineNumber  guibg=#ebebae
         hi TabLineFill                  guibg=#9bb9de
         hi TabLineSel                   guifg=#000000
+
         " CmdLine shennanigans
         hi NoiceCmdlinePopupBorder  guifg=#8e6d4f
         hi NoiceCmdlinePopupTitle   guifg=#8e6d4f
@@ -76,8 +77,7 @@ function SetColor()
     sign define DiagnosticSignOther     text=   texthl=DiagnosticSignOther
 
     " Python self
-    hi link @variable.builtin cssClassName
-
+    hi link @variable.builtin Identifier
 endfunction
 
 call SetColor()

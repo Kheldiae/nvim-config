@@ -80,9 +80,9 @@ hi link framacCommentInComment Comment
 
 hi link framacComment1 framacComment
 hi link framacComment2 framacComment
+
+" FramaC highlight
 hi framacComment  guibg=None guifg=#926c4c
 hi framacKeyword guibg=None guifg=Orange gui=underline
-
 hi framacKeyword2 guibg=None guifg=#00b333 gui=bold
-
 endif
