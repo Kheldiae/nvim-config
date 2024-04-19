@@ -190,16 +190,22 @@ lsp_with_coq(lsp.jdtls, {
         os.getenv("HOME").."/.cache/jdtls/workspace"
     }),
     cmd_env = { GRADLE_HOME = os.getenv("GRADLE_HOME") },
-    root_dir = util.root_pattern('build.gradle', 'build.gradle.kt', 'pom.xml', '.git', '.javals')
-    , init_options = {
+    root_dir = util.root_pattern('build.gradle', 'pom.xml', '.git', '.jdtls'),
+    init_options = {
         bundles = {
             nix:path("vscode-extensions.vscjava.vscode-java-debug",
             "/share/vscode/extensions/vscjava.vscode-java-debug/server/com.microsoft.java.debug.plugin-0.44.0.jar")
         }
     },
     on_attach = function(cl, bn)
-        jdtls.setup_dap({ hotcodereplace = 'auto'})
+        jdtls.setup_dap({ hotcodereplace = 'auto' })
     end
+})
+
+-- Kotlin
+lsp_with_coq(lsp.kotlin_language_server, {
+    cmd = nix:shell("kotlin-language-server", { "kotlin-language-server" }),
+    root_dir = util.root_pattern('build.gradle.kt', '.ktls')
 })
 
 -- Coq (the theorem language)
@@ -211,7 +217,6 @@ coql.setup {
     }
   }
 }
-
 
 -- Third-party Coq (the completion engine) providers
 require 'coq_3p' {

@@ -9,10 +9,16 @@
   flake-utils.lib.eachDefaultSystem
     (system:
     let
+      lspOverlay = (final: prev: {
+        kotlinLsp.url = github:renerocksai/kotlin-language-server.nixos;
+      });
+
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
-        overlays = [];
+        overlays = [
+          lspOverlay
+        ];
       };
 
       py3 = pkgs.python3.withPackages (ps: with ps;
