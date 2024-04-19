@@ -113,11 +113,17 @@ require'exrc'.setup {
 vim.env['PATH'] = vim.env['PATH'] .. ':' .. nix:path("tree-sitter", "/bin")
 
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "python", "markdown", "markdown_inline" },
+    ensure_installed = {
+        "c", "lua", "vim", "vimdoc", "query",
+        "python", "markdown", "markdown_inline",
+    },
 
     highlight = {
         enable = true,
-        disable = { "c", "cpp", "rust", "pandoc", "markdown", "markdown_inline", "java" }
+        disable = {
+            "c", "cpp", "rust", "pandoc",
+            "markdown", "markdown_inline", "java"
+        }
     }
 }
 
