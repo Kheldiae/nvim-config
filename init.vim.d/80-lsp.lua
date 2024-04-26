@@ -197,6 +197,11 @@ lsp_with_coq(lsp.jdtls, {
             "/share/vscode/extensions/vscjava.vscode-java-debug/server/com.microsoft.java.debug.plugin-0.44.0.jar")
         }
     },
+    handlers = {
+        ['$/progress'] = function(_, result, ctx)
+            -- Nothing here, it's just to capture these
+        end
+    },
     on_attach = function(cl, bn)
         jdtls.setup_dap({ hotcodereplace = 'auto' })
     end

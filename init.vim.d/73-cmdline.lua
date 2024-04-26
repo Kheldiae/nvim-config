@@ -16,7 +16,7 @@ require'noice'.setup {
         cmdline_popupmenu = {
             relative = "editor",
             position = { row = rowPos + 3, col = colPos - 1 }
-        },
+        }
     },
     messages = {
         view = "mini",
