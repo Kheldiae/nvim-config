@@ -33,7 +33,6 @@ function SetColor()
         hi NoiceCmdlinePopupBorder  guifg=#8e6d4f
         hi NoiceCmdlinePopupTitle   guifg=#8e6d4f
         hi NoiceCmdlineIcon         guifg=#918154
-        " TODO find background highlight group
     endif
 
     " Limelight conceal
