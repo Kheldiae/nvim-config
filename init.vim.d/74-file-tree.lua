@@ -65,9 +65,9 @@ require'nvim-web-devicons'.set_icon {
         cterm_color = "45",
         name = "Ui"
     },
-    -- Sourcetrail files (not ignored by Git)
+    -- Sourcetrail files (not the ones ignored by Git)
     srctrlprj = {
-        icon = "",
+        icon = "󱁉",
         color = "#b63a3f",
         cterm_color = "52",
         name = "Srctrlprj"

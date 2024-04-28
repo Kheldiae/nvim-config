@@ -5,7 +5,6 @@ set nolist
 let g:coq_settings = { 'auto_start': 'shut-up' }
 
 function SetGoyoColor()
-
     hi Normal       guibg=NONE ctermbg=NONE
     hi StatusLine   guibg=NONE ctermbg=NONE
     hi StatusLineNC guibg=NONE ctermbg=NONE
@@ -13,6 +12,10 @@ function SetGoyoColor()
 
     silent! sh -c 'sleep 4; kitty @ set-background-opacity 1'
 
+    " Noice modifications to read cmdline better
+    hi NoiceCmdlinePopupBorder  guifg=#c0b194
+    hi NoiceCmdlinePopupTitle   guifg=#c0b194
+    hi NoiceCmdlineIcon         guifg=#918154
 endfunction
 
 call SetGoyoColor()
@@ -28,4 +31,4 @@ let g:startify_disable_at_vimenter=1
 let g:copilot_enabled = 0
 
 autocmd vimenter * Goyo
-
+autocmd vimenter * set nospell
