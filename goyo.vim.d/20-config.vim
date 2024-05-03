@@ -4,6 +4,7 @@ set nolist
 " Enable Coq completion engine
 let g:coq_settings = { 'auto_start': 'shut-up' }
 
+" Updated colorscheme
 function SetGoyoColor()
     hi Normal       guibg=NONE ctermbg=NONE
     hi StatusLine   guibg=NONE ctermbg=NONE

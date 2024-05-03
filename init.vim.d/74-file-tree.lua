@@ -84,5 +84,12 @@ require'nvim-web-devicons'.set_icon {
         color = "#ffd75f",
         cterm_color = "221",
         name = "Libsonnet"
+    },
+    -- Properties files
+    properties = {
+        icon = "",
+        color = "#afafaf",
+        cterm_color = "145",
+        name = "Properties"
     }
 }

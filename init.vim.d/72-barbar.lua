@@ -7,7 +7,7 @@
 require'barbar'.setup {
     auto_hide = false,
     clickable = false,
-    icons  = { filetypes = {
+    icons = { filetypes = {
         custom_colors = true,
         enabled = true
     } },
