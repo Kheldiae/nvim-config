@@ -24,5 +24,12 @@ require'noice'.setup {
         view = "mini",
         view_warn = "mini",
         view_error = "notify"
+    },
+    format = {
+        filter = {
+            pattern = "^:%s*!",
+            icon = "$",
+            lang = "zsh" -- make sure this matched your favorite shell
+        }
     }
 }
