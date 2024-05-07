@@ -3,8 +3,10 @@
 -- form of readability setting, those are handled in 11-colorscheme.
 --
 
+-- Some constants, to rule the cmdline
 local colPos = 39
 local rowPos = 5
+local blending = 1
 
 -- Noice section
 require'noice'.setup {
@@ -18,7 +20,7 @@ require'noice'.setup {
             relative = "editor",
             position = { row = rowPos + 3, col = colPos - 1 }
         },
-        mini = { win_options = { winblend = 1 } }
+        mini = { win_options = { winblend = blending } }
     },
     messages = {
         view = "mini",
