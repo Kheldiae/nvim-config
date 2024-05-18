@@ -99,6 +99,9 @@ Plug '3rd/image.nvim'
 " Image copy/paste and drag-n-drop handling
 Plug 'HakonHarnes/img-clip.nvim'
 
+" DOT graphs support
+Plug 'VOID001/graph-easy-vim'
+
 " Jupyter integration
 Plug 'benlubas/molten-nvim',    { 'do': ':UpdateRemotePlugins' }
 

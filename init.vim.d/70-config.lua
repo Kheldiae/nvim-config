@@ -114,7 +114,7 @@ vim.env['PATH'] = vim.env['PATH'] .. ':' .. nix:path("tree-sitter", "/bin")
 
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {
-        "c", "lua", "vim", "vimdoc", "query",
+        "c", "dot", "lua", "vim", "vimdoc", "query",
         "python", "markdown", "markdown_inline",
     },
 

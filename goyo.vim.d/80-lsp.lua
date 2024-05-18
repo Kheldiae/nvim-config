@@ -24,6 +24,19 @@ lsp_with_coq(lsp.marksman, {
     filetypes = { "markdown", "markdown.mdx", "pandoc" }
 })
 
+-- DOT graph language server
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+    pattern = { "*.dot" },
+    callback = function()
+        vim.lsp.start({
+            name = "dot",
+            cmd = nix:shell("dot-language-server", {
+                "dot-language-server", "--stdio"
+            })
+        })
+    end
+})
+
 require 'coq_3p' {
     { src = "repl",
       sh = "zsh",
