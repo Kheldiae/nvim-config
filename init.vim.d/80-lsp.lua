@@ -210,7 +210,7 @@ lsp_with_coq(lsp.jdtls, {
 -- Kotlin
 lsp_with_coq(lsp.kotlin_language_server, {
     cmd = nix:shell("kotlin-language-server", { "kotlin-language-server" }),
-    root_dir = util.root_pattern('build.gradle.kt', '.ktls')
+    root_dir = util.root_pattern('build.gradle.kts', '.ktls')
 })
 
 -- Coq (the theorem language)
