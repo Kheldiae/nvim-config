@@ -91,5 +91,12 @@ require'nvim-web-devicons'.set_icon {
         color = "#afafaf",
         cterm_color = "145",
         name = "Properties"
+    },
+    -- Lua utilities
+    rockspec = {
+        icon = "󰢱",
+        color = "#51a0cf",
+        cterm_color = "075",
+        name = "Rockspec"
     }
 }

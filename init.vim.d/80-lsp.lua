@@ -236,6 +236,11 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
     end
 })
 
+-- Lua language server
+lsp_with_coq(lsp.lua_ls, {
+    cmd = nix:shell("lua-language-server", { "lua-language-server" })
+})
+
 -- Third-party Coq (the completion engine) providers
 require 'coq_3p' {
   { src = "ultisnips", short_name = "US" },
