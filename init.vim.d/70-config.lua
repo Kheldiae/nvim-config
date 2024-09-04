@@ -31,9 +31,6 @@ require'fwatch'.watch(os.getenv("XDG_RUNTIME_DIR") .. "/theme",
                 end
     })
 
--- Trouble diagnostics list config
-require'trouble'.setup {}
-
 -- Visual Git integration
 require'vgit'.setup {}
 

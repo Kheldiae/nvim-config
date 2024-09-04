@@ -77,7 +77,7 @@ function SetColor()
     sign define DiagnosticSignOther     text=   texthl=DiagnosticSignOther
 
     " Trouble highlighting
-    hi TroublePreview ctermbg=NONE ctermfg=NONE guibg=NONE
+    hi TroubleNormal ctermbg=NONE ctermfg=NONE guibg=NONE
 
     " Python highlights
     hi link @variable.builtin Identifier

@@ -34,7 +34,10 @@ nnoremap <silent> <leader>c<left>       :lua vim.lsp.buf.incoming_calls()<CR>
 nnoremap <silent> <leader>c<right>      :lua vim.lsp.buf.outgoing_calls()<CR>
 nnoremap <silent> <leader>cf            :lua vim.lsp.buf.format()<CR>
 nnoremap <silent> <leader>yp            :!yapf -i %<CR>
-nnoremap <silent> <leader>!             :Trouble diagnostics toggle<CR>
+
+" Trouble related keybinds
+nnoremap <silent> <leader>!             :Trouble proj_errs toggle<CR>
+nnoremap <silent> <leader>f             :Trouble file_diags toggle<CR>
 
 nnoremap <silent> <leader>tt            :Vista<CR>
 
