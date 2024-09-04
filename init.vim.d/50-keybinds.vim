@@ -34,7 +34,7 @@ nnoremap <silent> <leader>c<left>       :lua vim.lsp.buf.incoming_calls()<CR>
 nnoremap <silent> <leader>c<right>      :lua vim.lsp.buf.outgoing_calls()<CR>
 nnoremap <silent> <leader>cf            :lua vim.lsp.buf.format()<CR>
 nnoremap <silent> <leader>yp            :!yapf -i %<CR>
-nnoremap <silent> <leader>!             :TroubleToggle workspace_diagnostics<CR>
+nnoremap <silent> <leader>!             :Trouble diagnostics toggle<CR>
 
 nnoremap <silent> <leader>tt            :Vista<CR>
 
