@@ -2,7 +2,7 @@
   description = "Dependency locks for my Neovim config";
 
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs;
+    nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
   outputs = { self, nixpkgs, flake-utils, ... }:
@@ -53,7 +53,7 @@
         '';
       };
 
-      apps.neovim = {
+      apps.nvim = {
         type = "app";
         program = "${self.packages.${system}.neovim}/bin/nvim";
       };
