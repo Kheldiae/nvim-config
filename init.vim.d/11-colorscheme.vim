@@ -1,7 +1,7 @@
 " Custom colorscheme definition, needs to be splitted around the 'if' to make
 " sure to be able to hotswap the colorscheme correctly.
 function SetColor()
-    " Rely on zsh script for dark/light
+    " Rely on zsh script for dark/liht
     if system('zsh -ic _get_theme') =~ 'light'
         set background=light
         colorscheme daedrim
@@ -75,9 +75,6 @@ function SetColor()
     sign define DiagnosticSignHint      text=   texthl=DiagnosticSignHint
     sign define DiagnosticSignInfo      text=   texthl=DiagnosticSignInfo
     sign define DiagnosticSignOther     text=   texthl=DiagnosticSignOther
-
-    " Trouble highlighting
-    hi TroubleNormal ctermbg=NONE ctermfg=NONE guibg=NONE
 
     " Python highlights
     hi link @variable.builtin Identifier
