@@ -24,6 +24,9 @@ let g:DevIconsEnableNERDTreeRedraw = 0
 " Find our runtime dir to obtain our flake lock
 let config_root = split(&runtimepath, ',')[0]
 
+" Open all folds by default
+set foldlevel=99
+
 " GitHub Copilot Node command
 if isdirectory('/nix')
     let g:copilot_node_command = ['nix', '--extra-experimental-features', 'nix-command flakes', 'run', config_root . '#nodejs', '--']
