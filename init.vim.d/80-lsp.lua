@@ -13,7 +13,6 @@ local path = require 'plenary.path'
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 local lsp  = require 'lspconfig'
-local lspc = require 'lspconfig.configs'
 local util = require 'lspconfig/util'
 local jdtls = require 'jdtls'
 local coq = require 'coq'
@@ -160,7 +159,7 @@ lsp_with_coq(lsp.nixd, { cmd = nix:shell("nixd", {"nixd"}) })
 lsp_with_coq(lsp.texlab, { cmd = nix:shell("texlab", {"texlab"}) })
 
 -- Javascript and TypeScript
-lsp_with_coq(lsp.tsserver, {
+lsp_with_coq(lsp.ts_ls, {
     cmd = nix:shell("nodePackages.typescript-language-server", {
         "typescript-language-server", "--stdio"
     })

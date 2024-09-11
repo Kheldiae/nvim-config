@@ -15,7 +15,12 @@ require'trouble'.setup {
                             (vim.loop or vim.uv).cwd(), 1, true)
                     end
                 }
-            } }
+            } },
+            -- simpler formatting
+            groups = {
+                "filename",
+                format = "{file_icon} {basename:Title} {count}"
+            }
         }
     }
 }
