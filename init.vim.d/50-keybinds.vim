@@ -37,7 +37,6 @@ nnoremap <silent> <leader>yp            :!yapf -i %<CR>
 
 " Trouble related keybinds
 nnoremap <silent> <leader>!             :Trouble proj_errs toggle<CR>
-nnoremap <silent> <leader>fd            :Trouble file_diags toggle<CR>
 
 " Vista views
 nnoremap <silent> <leader>tt            :Vista<CR>

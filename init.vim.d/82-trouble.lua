@@ -4,11 +4,6 @@
 
 require'trouble'.setup {
     modes = {
-        -- buffer specific diagnostics
-        file_diags = {
-            mode = "diagnostics",
-            filter = { buf = 0 }
-        },
         -- project errors
         proj_errs = {
             mode = "diagnostics",
