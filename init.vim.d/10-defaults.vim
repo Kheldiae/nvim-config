@@ -10,9 +10,10 @@ set breakindentopt=shift:2
 
 set autoread
 
+" Fold shennanigans, we don't want them by default
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
-set foldlevel=2
+set foldlevel=99
 set conceallevel=3
 
 set completeopt-=preview
