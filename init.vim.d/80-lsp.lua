@@ -178,9 +178,6 @@ lsp_with_coq(lsp.marksman, {
     filetypes = { "markdown", "markdown.mdx", "pandoc" }
 })
 
--- Cucumber
--- TODO finish cucumberlsp build
-
 -- Java
 lsp_with_coq(lsp.jdtls, {
     cmd = nix:shell("jdt-language-server", {
