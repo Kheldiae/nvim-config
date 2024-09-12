@@ -14,7 +14,6 @@ require'barbar'.setup {
     sidebar_filetypes = {
         NvimTree = true,
         vista_kind = true,
-        vista = true,
-        trouble = true
+        vista = true
     }
 }
