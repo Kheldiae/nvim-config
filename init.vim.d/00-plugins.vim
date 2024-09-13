@@ -103,7 +103,7 @@ Plug 'HakonHarnes/img-clip.nvim'
 Plug 'benlubas/molten-nvim',    { 'do': ':UpdateRemotePlugins' }
 
 " Graph generation
-" Plug 'VOID001/graph-easy-vim'
+" Plug 'kheldae/graphs.nvim'
 
 " Debugging JDTls extension
 Plug 'mfussenegger/nvim-jdtls'
