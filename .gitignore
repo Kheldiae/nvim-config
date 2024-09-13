@@ -9,7 +9,6 @@ spell/*
 # Nix-related ignores
 .nixie
 result
-bootstrap.lock
 
 # Testing
 test_files
