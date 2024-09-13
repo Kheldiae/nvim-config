@@ -167,8 +167,15 @@ lsp_with_coq(lsp.ts_ls, {
 
 -- CSS
 lsp_with_coq(lsp.cssls, {
-    cmd = nix:shell("nodePackages.vscode-css-languageserver-bin", {
-        "css-languageserver", "--stdio"
+    cmd = nix:shell("nodePackages.vscode-langservers-extracted", {
+        "vscode-css-language-server", "--stdio"
+    })
+})
+
+-- HTML
+lsp_with_coq(lsp.html, {
+    cmd = nix:shell("nodePackages.vscode-langservers-extracted", {
+        "vscode-html-language-server", "--stdio"
     })
 })
 
