@@ -20,6 +20,13 @@ require'trouble'.setup {
             groups = {
                 "filename",
                 format = "{file_icon} {basename:Title} {count}"
+            },
+            -- Preview display, it might be useful
+            preview = {
+                type = "split",
+                relative = "win",
+                position = "right",
+                size = "0.4"
             }
         }
     }
