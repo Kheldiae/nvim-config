@@ -16,7 +16,7 @@ require'trouble'.setup {
                     end
                 }
             } },
-            -- simpler formatting
+            -- Simpler formatting, from simpler times
             groups = {
                 "filename",
                 format = "{file_icon} {basename:Title} {count}"
