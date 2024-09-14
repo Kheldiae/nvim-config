@@ -74,14 +74,14 @@
             wrapperArgs = prev.wrapperArgs ++ [
               "--suffix" "PATH" ":" "${bootstrap.lspPackages}/bin"
               "--suffic" "PATH" ":" "${bootstrap.packages}/bin"
-            ]
+            ];
           }));
       packages."neovim-full-offline" = addGoyo (
         wrappedNeovimOffline.override (
           prev: {
             wrapperArgs = prev.wrapperArgs ++ [
               "--suffix" "PATH" ":" "${bootstrap.lspPackages}/bin"
-            ]
+            ];
           }));
 
       apps.nvim = {
