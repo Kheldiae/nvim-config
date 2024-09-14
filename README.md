@@ -65,7 +65,6 @@ Keys    | Action                          | Vim command
 `mv`    | Refactor (rename) symbol        |
 `?`     | Show code actions               | `:CodeActionMenu`
 `!`     | Show diagnostics panel          |
-`f`     | Show file-only diagnostics panel|
         |                                 |
 `d…`    | _**Debugger**_                  |
 `db`    | Set breakpoint                  |
