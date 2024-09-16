@@ -1,5 +1,5 @@
 --
--- Language servers and debug adapters config
+-- Language servers config, please look 81-dap.lua for debug adapters configs.
 --
 
 require 'nix'
@@ -96,7 +96,7 @@ lsp_with_coq(lsp.elmls, {
 
 -- Rust
 lsp_with_coq(lsp.rust_analyzer, {
-    cmd = nix:shell("rust-analyzer", {"rust-analyzer"})
+    cmd = nix:shell("rust-analyzer", { "rust-analyzer" })
 })
 
 -- Haskell
@@ -203,6 +203,7 @@ lsp_with_coq(lsp.jdtls, {
     handlers = {
         ['$/progress'] = function(_, result, ctx)
             -- Nothing here, it's just to capture these
+            -- Just treat this handler as another stfu handler
         end
     },
     on_attach = function(cl, bn)
@@ -219,7 +220,7 @@ lsp_with_coq(lsp.kotlin_language_server, {
 -- Coq (the theorem language)
 coql.setup {
   lsp = {
-    cmd = nix:shell("coqPackages_8_16.coq-lsp", {"coq-lsp"}),
+    cmd = nix:shell("coqPackages_8_16.coq-lsp", { "coq-lsp" }),
     init_options = {
       show_notices_as_diagnostics = true
     }
