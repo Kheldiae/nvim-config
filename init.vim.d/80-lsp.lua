@@ -201,7 +201,7 @@ lsp_with_coq(lsp.jdtls, {
         }
     },
     handlers = {
-        ['$/progress'] = function(_, result, ctx)
+        ['$/progress'] = function(_, _result, _ctx)
             -- Nothing here, it's just to capture these
             -- Just treat this handler as another stfu handler
         end
