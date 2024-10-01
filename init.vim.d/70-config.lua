@@ -12,7 +12,7 @@ vim.env['PATH'] = vim.env['PATH'] .. ':' .. nix:path("universal-ctags", "/bin")
 local vnotify = require 'notify'
 
 vnotify.setup {
-    background_colour="#000000"
+    background_colour = "#000000"
 }
 
 vim.notify = function(msg, ...)
@@ -25,25 +25,26 @@ vim.notify = function(msg, ...)
 end
 
 -- Light/dark theme watch
-require'fwatch'.watch(os.getenv("XDG_RUNTIME_DIR") .. "/theme",
-    { on_event = function()
-                    vim.defer_fn(vim.fn.SetColor, 10)
-                end
+require 'fwatch'.watch(os.getenv("XDG_RUNTIME_DIR") .. "/theme",
+    {
+        on_event = function()
+            vim.defer_fn(vim.fn.SetColor, 10)
+        end
     })
 
 -- Visual Git integration
-require'vgit'.setup {}
+require 'vgit'.setup {}
 
 -- Color picker
-require'color-picker'.setup {
+require 'color-picker'.setup {
     border = "rounded",
     keymap = { ["p"] = "<Plug>ColorPickerSlider5Increase",
-               ["i"] = "<Plug>ColorPickerSlider5Decrease"
-             }
+        ["i"] = "<Plug>ColorPickerSlider5Decrease"
+    }
 }
 
 -- Git conflict markers
-require'git-conflict'.setup {
+require 'git-conflict'.setup {
     default_mappings = false,
     disable_diagnostics = true,
 }
@@ -53,7 +54,7 @@ function _diag(args)
     if args.button == "m" then
         vim.cmd("CodeActionMenu")
     else
-        require"statuscol.builtin".diagnostic_click(args)
+        require "statuscol.builtin".diagnostic_click(args)
     end
 end
 
@@ -66,7 +67,8 @@ function _git(args)
         vim.cmd("VGit buffer_hunk_stage")
     end
 end
-require'statuscol'.setup {
+
+require 'statuscol'.setup {
     relculright = false,
     clickhandlers = {
         DiagnosticSignError = _diag,
@@ -84,9 +86,9 @@ require'statuscol'.setup {
 }
 
 -- Indent blank line
-local hooks = require'ibl.hooks'
+local hooks = require 'ibl.hooks'
 
-require'ibl'.setup {
+require 'ibl'.setup {
     indent = { char = '┊' },
     exclude = {
         filetypes = {
@@ -97,7 +99,7 @@ require'ibl'.setup {
 }
 
 -- Per-project secure exrc
-require'exrc'.setup {
+require 'exrc'.setup {
     files = {
         ".nvimrc.lua",
         ".nvimrc",
@@ -109,7 +111,7 @@ require'exrc'.setup {
 -- TreeSitter config
 vim.env['PATH'] = vim.env['PATH'] .. ':' .. nix:path("tree-sitter", "/bin")
 
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
     ensure_installed = {
         "c", "dot", "lua", "vim", "vimdoc", "query",
         "python", "markdown", "markdown_inline",
@@ -129,13 +131,13 @@ vim.treesitter.language.register('cpp', 'cpp.doxygen')
 vim.treesitter.language.register('cuda', 'cuda.doxygen')
 
 -- TreeSitter Context config
-require'treesitter-context'.setup {
+require 'treesitter-context'.setup {
     enable = true,
     mode = 'cursor'
 }
 
 -- Image.nvim config
-require'image'.setup {
+require 'image'.setup {
     backend = "kitty",
     max_width = 300,
     max_height = 50,
@@ -160,10 +162,10 @@ if vim.env['XDG_SESSION_TYPE'] == 'wayland'
 then
     vim.env['PATH'] = vim.env['PATH'] .. ':' .. nix:path("wl-clipboard-x11", "/bin")
 else
-    vim.env['PATH'] = vim.env['PATH'] .. ':' .. nix:path("xclip", "/bin")
+    vim.env['PATH'] = vim.env['PATH'] .. ':' .. nix:path("wl-clipboard-x11", "/bin")
 end
 
-require'img-clip'.setup {
+require 'img-clip'.setup {
     pandoc = {
         url_encode_path = true,
         template = "![$CURSOR]($FILE_PATH)",
@@ -175,4 +177,4 @@ require'img-clip'.setup {
 }
 
 -- kitty-scrollback config
-require'kitty-scrollback'.setup()
+require 'kitty-scrollback'.setup()

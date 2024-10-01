@@ -14,7 +14,7 @@ call plug#begin(stdpath('config').'/bundle')
 Plug 'junegunn/vim-plug'
 
 " Color scheme
-Plug 'kheldae/vimthemes'
+Plug 'Khelda/vimthemes'
 
 " File listener for color scheme changer
 Plug 'rktjmp/fwatch.nvim'
@@ -101,9 +101,6 @@ Plug 'HakonHarnes/img-clip.nvim'
 
 " Jupyter integration
 Plug 'benlubas/molten-nvim',    { 'do': ':UpdateRemotePlugins' }
-
-" Graph generation
-" Plug 'kheldae/graphs.nvim'
 
 " Debugging JDTls extension
 Plug 'mfussenegger/nvim-jdtls'

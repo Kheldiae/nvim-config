@@ -188,7 +188,7 @@ lsp_with_coq(lsp.marksman, {
 -- Java
 lsp_with_coq(lsp.jdtls, {
     cmd = nix:shell("jdt-language-server", {
-        "jdt-language-server", "-configuration",
+        "jdtls", "-configuration",
         os.getenv("HOME").."/.cache/jdtls/config", "-data",
         os.getenv("HOME").."/.cache/jdtls/workspace"
     }),

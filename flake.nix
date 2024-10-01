@@ -73,7 +73,7 @@
           prev: {
             wrapperArgs = prev.wrapperArgs ++ [
               "--suffix" "PATH" ":" "${bootstrap.lspPackages}/bin"
-              "--suffic" "PATH" ":" "${bootstrap.packages}/bin"
+              "--suffix" "PATH" ":" "${bootstrap.packages}/bin"
             ];
           }));
       packages."neovim-full-offline" = addGoyo (
