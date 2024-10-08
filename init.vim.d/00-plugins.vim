@@ -208,4 +208,3 @@ Plug 'Jorengarenar/vim-syntaxMarkerFold'
 Plug 'ziontee113/color-picker.nvim'
 
 call plug#end()
-

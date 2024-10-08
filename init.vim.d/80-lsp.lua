@@ -4,20 +4,20 @@
 
 require 'nix'
 
-local nix = Nix:new()
-local pscan = require 'plenary.scandir'
-local path = require 'plenary.path'
+local nix                                                          = Nix:new()
+local pscan                                                        = require 'plenary.scandir'
+local path                                                         = require 'plenary.path'
 
 ---
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities                                                 = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-local lsp  = require 'lspconfig'
-local util = require 'lspconfig/util'
-local jdtls = require 'jdtls'
-local coq = require 'coq'
-local coql = require 'coq-lsp'
-local fwatch = require 'fwatch'
+local lsp                                                          = require 'lspconfig'
+local util                                                         = require 'lspconfig/util'
+local jdtls                                                        = require 'jdtls'
+local coq                                                          = require 'coq'
+local coql                                                         = require 'coq-lsp'
+local fwatch                                                       = require 'fwatch'
 
 
 -- Boost LSP using Coq_nvim
@@ -29,7 +29,7 @@ local lsp_cmake_sessions = {}
 
 -- Automatically set up CMake compile_commands.json
 function setupCmakeIntegration()
-    local op = {title="CMake build lists integration"}
+    local op = { title = "CMake build lists integration" }
     local ppr = util.root_pattern('.ccls', '.git')(vim.fn.expand('%:p'))
     local bdir = "!!INVALID!!"
     local mybuf = vim.api.nvim_get_current_buf()
@@ -56,20 +56,20 @@ function setupCmakeIntegration()
             bdir = bdir:match("(.*/)")
         end
 
-        local cmakecmd = "2>&1 >"..bdir.."/cmake.log "..
-                         "cmake -B "..bdir..
-                         " -DCMAKE_EXPORT_COMPILE_COMMANDS=ON "..ppr
+        local cmakecmd = "2>&1 >" .. bdir .. "/cmake.log " ..
+            "cmake -B " .. bdir ..
+            " -DCMAKE_EXPORT_COMPILE_COMMANDS=ON " .. ppr
 
         for _, el in pairs(cmls) do
             fwatch.watch(el, {
-            on_event = function()
-                -- rebuild CMake then restart ccls
-                io.popen(cmakecmd)
-                vim.notify("Reloaded compile commands, restarting LSP...", "info", op)
-                vim.schedule(function()
-                    lsp["ccls"].launch(mybuf)
-                end)
-            end
+                on_event = function()
+                    -- rebuild CMake then restart ccls
+                    io.popen(cmakecmd)
+                    vim.notify("Reloaded compile commands, restarting LSP...", "info", op)
+                    vim.schedule(function()
+                        lsp["ccls"].launch(mybuf)
+                    end)
+                end
             })
         end
         -- perform first CMake build
@@ -106,13 +106,13 @@ lsp_with_coq(lsp.hls, {
     }),
     root_dir = function(fname)
         return util.find_git_ancestor(fname)
-        or util.root_pattern("*.cabal", "stack.yaml", "package.yaml", "default.nix", "shell.nix")(fname)
+            or util.root_pattern("*.cabal", "stack.yaml", "package.yaml", "default.nix", "shell.nix")(fname)
     end
 })
 
 -- C/C++
 lsp_with_coq(lsp.ccls, {
-    cmd = nix:shell("ccls", {"ccls"}),
+    cmd = nix:shell("ccls", { "ccls" }),
     init_options = {
         highlight = { lsRanges = true },
         compilationDatabaseDirectory = setupCmakeIntegration()
@@ -129,12 +129,12 @@ lsp_with_coq(lsp.cmake, {
 
 -- JSonnet
 lsp_with_coq(lsp.jsonnet_ls, {
-    cmd = nix:shell("jsonnet-language-server", {"jsonnet-language-server"})
+    cmd = nix:shell("jsonnet-language-server", { "jsonnet-language-server" })
 })
 
 -- OCaML
 lsp_with_coq(lsp.ocamllsp, {
-    cmd = nix:shell("ocamlPackages.ocaml-lsp", {"ocamllsp"}),
+    cmd = nix:shell("ocamlPackages.ocaml-lsp", { "ocamllsp" }),
     cmd_env = { OCAMLLSP_SEMANTIC_HIGHLIGHTING = "full/delta" }
 })
 
@@ -153,10 +153,10 @@ lsp_with_coq(lsp.purescriptls, {
 })
 
 -- Nix
-lsp_with_coq(lsp.nixd, { cmd = nix:shell("nixd", {"nixd"}) })
+lsp_with_coq(lsp.nixd, { cmd = nix:shell("nixd", { "nixd" }) })
 
 -- LaTeX
-lsp_with_coq(lsp.texlab, { cmd = nix:shell("texlab", {"texlab"}) })
+lsp_with_coq(lsp.texlab, { cmd = nix:shell("texlab", { "texlab" }) })
 
 -- Javascript and TypeScript
 lsp_with_coq(lsp.ts_ls, {
@@ -179,6 +179,25 @@ lsp_with_coq(lsp.html, {
     })
 })
 
+-- Eslint
+lsp_with_coq(lsp.eslint, {
+    cmd = nix:shell("nodePackages.vscode-langservers-extracted", {
+        "vscode-eslint-language-server", "--stdio"
+    }),
+    filetypes = {
+        "javascript", "javascriptreact", "javascript.jsx",
+        "typescript", "typescriptreact", "typescript.tsx"
+    },
+    root_dir = util.root_pattern('.git', '.estls'),
+    settings = {
+        codeAction = { showDocumentation = { enable = true } },
+        format = true,
+        useESLintClass = false,
+        workingDirectory = { mode = "location" },
+        run = "onType"
+    }
+})
+
 -- Marksman knowledge base
 lsp_with_coq(lsp.marksman, {
     cmd = nix:shell("marksman", { "marksman", "server" }),
@@ -189,15 +208,15 @@ lsp_with_coq(lsp.marksman, {
 lsp_with_coq(lsp.jdtls, {
     cmd = nix:shell("jdt-language-server", {
         "jdtls", "-configuration",
-        os.getenv("HOME").."/.cache/jdtls/config", "-data",
-        os.getenv("HOME").."/.cache/jdtls/workspace"
+        os.getenv("HOME") .. "/.cache/jdtls/config", "-data",
+        os.getenv("HOME") .. "/.cache/jdtls/workspace"
     }),
     cmd_env = { GRADLE_HOME = os.getenv("GRADLE_HOME") },
     root_dir = util.root_pattern('build.gradle', 'pom.xml', '.git', '.jdtls'),
     init_options = {
         bundles = {
             nix:path("vscode-extensions.vscjava.vscode-java-debug",
-            "/share/vscode/extensions/vscjava.vscode-java-debug/server/com.microsoft.java.debug.plugin-0.44.0.jar")
+                "/share/vscode/extensions/vscjava.vscode-java-debug/server/com.microsoft.java.debug.plugin-0.44.0.jar")
         }
     },
     handlers = {
@@ -219,12 +238,12 @@ lsp_with_coq(lsp.kotlin_language_server, {
 
 -- Coq (the theorem language)
 coql.setup {
-  lsp = {
-    cmd = nix:shell("coqPackages_8_16.coq-lsp", { "coq-lsp" }),
-    init_options = {
-      show_notices_as_diagnostics = true
+    lsp = {
+        cmd = nix:shell("coqPackages_8_16.coq-lsp", { "coq-lsp" }),
+        init_options = {
+            show_notices_as_diagnostics = true
+        }
     }
-  }
 }
 
 -- DOT graph language server
@@ -247,29 +266,29 @@ lsp_with_coq(lsp.lua_ls, {
 
 -- Third-party Coq (the completion engine) providers
 require 'coq_3p' {
-  { src = "ultisnips", short_name = "US" },
-  { src = "repl",
-    sh = "zsh",
-    max_lines = 99,
-    deadline = 500,
-    unsafe = { "rm", "poweroff", "shutdown", "mv", "sudo" }
-  },
-  { src = "nvimlua",
-    short_name = "nLUA",
-    conf_only = true
-  },
-  { src = "bc", short_name = "MATH", precision = 6 },
-  { src = "dap", short_name = "DBG" }
+    { src = "ultisnips", short_name = "US" },
+    { src = "repl",
+        sh = "zsh",
+        max_lines = 99,
+        deadline = 500,
+        unsafe = { "rm", "poweroff", "shutdown", "mv", "sudo" }
+    },
+    { src = "nvimlua",
+        short_name = "nLUA",
+        conf_only = true
+    },
+    { src = "bc",        short_name = "MATH", precision = 6 },
+    { src = "dap",       short_name = "DBG" }
 }
 
 -- Fancy lsputil popups
-vim.lsp.handlers['textDocument/codeAction']     = require'lsputil.codeAction'.code_action_handler
-vim.lsp.handlers['textDocument/definition']     = require'lsputil.locations'.definition_handler
-vim.lsp.handlers['textDocument/declaration']    = require'lsputil.locations'.declaration_handler
-vim.lsp.handlers['textDocument/typeDefinition'] = require'lsputil.locations'.typeDefinition_handler
-vim.lsp.handlers['textDocument/implementation'] = require'lsputil.locations'.implementation_handler
-vim.lsp.handlers['textDocument/documentSymbol'] = require'lsputil.symbols'.document_handler
-vim.lsp.handlers['workspace/symbol']            = require'lsputil.symbols'.workspace_handler
+vim.lsp.handlers['textDocument/codeAction']     = require 'lsputil.codeAction'.code_action_handler
+vim.lsp.handlers['textDocument/definition']     = require 'lsputil.locations'.definition_handler
+vim.lsp.handlers['textDocument/declaration']    = require 'lsputil.locations'.declaration_handler
+vim.lsp.handlers['textDocument/typeDefinition'] = require 'lsputil.locations'.typeDefinition_handler
+vim.lsp.handlers['textDocument/implementation'] = require 'lsputil.locations'.implementation_handler
+vim.lsp.handlers['textDocument/documentSymbol'] = require 'lsputil.symbols'.document_handler
+vim.lsp.handlers['workspace/symbol']            = require 'lsputil.symbols'.workspace_handler
 
 -- stfu
-vim.lsp._unsupported_method = function(m) end
+vim.lsp._unsupported_method                     = function(m) end
