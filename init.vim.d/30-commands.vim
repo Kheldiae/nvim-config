@@ -42,3 +42,6 @@ function SetLAutoFormat(state)
         echo 'Enabled auto-formatter.'
     endif
 endfunction
+
+" STFU command
+command W w
