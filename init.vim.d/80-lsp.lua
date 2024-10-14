@@ -211,6 +211,7 @@ lsp_with_coq(lsp.jdtls, {
         os.getenv("HOME") .. "/.cache/jdtls/config", "-data",
         os.getenv("HOME") .. "/.cache/jdtls/workspace"
     }),
+    filetypes = { "java" },
     cmd_env = { GRADLE_HOME = os.getenv("GRADLE_HOME") },
     root_dir = util.root_pattern('build.gradle', 'pom.xml', '.git', '.jdtls'),
     init_options = {

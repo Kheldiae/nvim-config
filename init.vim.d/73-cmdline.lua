@@ -9,7 +9,7 @@ local rowPos = 5
 local blending = 1
 
 -- Noice section
-require'noice'.setup {
+require 'noice'.setup {
     presets = { command_palette = true },
     views = {
         cmdline_popup = {
@@ -33,5 +33,18 @@ require'noice'.setup {
             icon = "$",
             lang = "zsh" -- make sure this matched your favorite shell
         }
+    },
+    lsp = {
+        override = {
+            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+            ["vim.lsp.util.stylize_markdown"] = true
+        }
+    },
+    routes = {
+        filter = {
+            event = "msg_show",
+            kind = ""
+        },
+        opts = { skip = true } -- jdtls, please stfu
     }
 }

@@ -61,7 +61,7 @@ require'lualine'.setup {
         disabled_filetypes = {
             statusline = {
                 'NvimTree', 'vista_kind', 'vista', 'Trouble', 'coq-goals',
-                'vista_markdown'
+                'vista_markdown', 'qf', 'trouble', 'noice'
             }
         },
     },
