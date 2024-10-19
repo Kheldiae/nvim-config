@@ -224,6 +224,9 @@ lsp_with_coq(lsp.jdtls, {
         ['$/progress'] = function(_, _result, _ctx)
             -- Nothing here, it's just to capture these
             -- Just treat this handler as another stfu handler
+        end,
+        ['language/status'] = function(_, result)
+            -- STFU please !
         end
     },
     on_attach = function(cl, bn)

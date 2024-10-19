@@ -76,7 +76,7 @@ function SetColor()
     sign define DiagnosticSignInfo      text=   texthl=DiagnosticSignInfo
     sign define DiagnosticSignOther     text=   texthl=DiagnosticSignOther
 
-    " Python highlights
+    " Python highlights fixes
     hi link @variable.builtin Identifier
 endfunction
 
