@@ -9,7 +9,6 @@ function SetColor()
         hi NonText                      guifg=#aaaaaa
         hi DiffText                     guibg=#ffdc87
         hi DiffAdd                      guibg=#afffb4
-        hi TreesitterContextLineNumber  guibg=#ebebae
         hi TabLineFill                  guibg=#9bb9de
         hi TabLineSel                   guifg=#000000
 
@@ -17,13 +16,16 @@ function SetColor()
         hi NoiceCmdlinePopupBorder  guifg=#8e6d4f
         hi NoiceCmdlinePopupTitle   guifg=#8e6d4f
         hi NoiceCmdlineIcon         guifg=#918154
+
+        " Treesitter highlighting
+        hi TSContext guibg=None
+        hi TreesitterContextLineNumber  guibg=#ebebae
     else
         colorscheme daeser
 
         hi NonText                      guifg=#6f6f6f
         hi DiffText                     guibg=#644100
         hi DiffAdd                      guibg=#1e5005
-        hi TreesitterContextLineNumber  guibg=#535353
         hi TabLineFill                  guibg=#292b2f
         hi TabLineSel                   guifg=#292b2f
         hi BufferCurrentMod             guifg=#ffffff
@@ -33,6 +35,10 @@ function SetColor()
         hi NoiceCmdlinePopupBorder  guifg=#8e6d4f
         hi NoiceCmdlinePopupTitle   guifg=#8e6d4f
         hi NoiceCmdlineIcon         guifg=#918154
+
+        " Context highlighting
+        hi TSContext guibg=#535353
+        hi TreesitterContextLineNumber guibg=#535353
     endif
 
     " Limelight conceal
@@ -78,6 +84,9 @@ function SetColor()
 
     " Python highlights fixes
     hi link @variable.builtin Identifier
+
+    " TreesitterContext fix
+    hi link TreesitterContext TSContext
 endfunction
 
 call SetColor()

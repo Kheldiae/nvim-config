@@ -3,7 +3,8 @@
 -- form of readability setting, those are handled in 11-colorscheme.
 --
 
--- Some constants, to rule the cmdline
+-- Some constants, to rule the cmdline.
+-- Make sure they match the way you personnaly use this editor.
 local colPos = 39
 local rowPos = 5
 local blending = 1

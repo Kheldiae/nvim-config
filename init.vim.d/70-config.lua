@@ -114,13 +114,13 @@ vim.env['PATH'] = vim.env['PATH'] .. ':' .. nix:path("tree-sitter", "/bin")
 require 'nvim-treesitter.configs'.setup {
     ensure_installed = {
         "c", "dot", "lua", "vim", "vimdoc", "query",
-        "python", "markdown", "markdown_inline",
+        "python", "markdown", "markdown_inline", "rust",
     },
 
     highlight = {
         enable = true,
         disable = {
-            "c", "cpp", "rust", "pandoc",
+            "c", "cpp", "pandoc", "rust",
             "markdown", "markdown_inline", "java"
         }
     }
