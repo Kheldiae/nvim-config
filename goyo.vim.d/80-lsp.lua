@@ -24,6 +24,9 @@ lsp_with_coq(lsp.marksman, {
     filetypes = { "markdown", "markdown.mdx", "pandoc" }
 })
 
+-- LATeX support
+lsp_with_coq(lsp.texlab, { cmd = nix:shell("texlab", { "texlab" }) })
+
 -- DOT graph language server
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = { "*.dot" },
@@ -46,4 +49,3 @@ require 'coq_3p' {
     },
     { src = "bc", short_name = "MATH", precision = 6 }
 }
-
