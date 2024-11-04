@@ -198,6 +198,19 @@ lsp_with_coq(lsp.eslint, {
     }
 })
 
+-- Swagger LSP integration
+lsp_with_coq(lsp.spectral, {
+    cmd = nix:shell("spectral-language-server", {
+        "spectral-language-server", "--stdio"
+    }),
+    filetypes = { "json", "yml", "yaml" },
+    settings = {
+        enable = true,
+        run = "onType",
+        validateLanguages = { "yaml", "json", "yml" }
+    }
+})
+
 -- Marksman knowledge base
 lsp_with_coq(lsp.marksman, {
     cmd = nix:shell("marksman", { "marksman", "server" }),
