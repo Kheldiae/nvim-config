@@ -51,7 +51,6 @@ local function get_visual_multi()
         .. ratio
 end
 
-
 require'lualine'.setup {
     options = {
         icons_enabled = true,

@@ -25,11 +25,12 @@ call SetGoyoColor()
 let g:limelight_conceal_ctermfg=0xa
 
 " Make goyo a bit wider
-let g:goyo_width=100
+let g:goyo_width=102
 
 let g:startify_disable_at_vimenter=1
 
 let g:copilot_enabled = 0
 
+" Load Goyo from startup
 autocmd vimenter * Goyo
 autocmd vimenter * set nospell
