@@ -234,15 +234,15 @@ lsp_with_coq(lsp.jdtls, {
         }
     },
     handlers = {
-        ['$/progress'] = function(_, _result, _ctx)
+        ['$/progress'] = function(_, _, _)
             -- Nothing here, it's just to capture these
             -- Just treat this handler as another stfu handler
         end,
-        ['language/status'] = function(_, result)
-            -- STFU please !
+        ['language/status'] = function(_, _, _)
+            -- STFU handler for java
         end
     },
-    on_attach = function(cl, bn)
+    on_attach = function(_, _)
         jdtls.setup_dap({ hotcodereplace = 'auto' })
     end
 })
@@ -279,6 +279,11 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 -- Lua language server
 lsp_with_coq(lsp.lua_ls, {
     cmd = nix:shell("lua-language-server", { "lua-language-server" })
+})
+
+-- Postgres language server
+lsp_with_coq(lsp.postgres_lsp, {
+    cmd = nix:shell("postgres-lsp", { "postgres_lsp" })
 })
 
 -- Third-party Coq (the completion engine) providers
