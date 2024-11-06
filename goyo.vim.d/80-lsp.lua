@@ -40,12 +40,25 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
     end
 })
 
+-- Swagger API specifications
+lsp_with_coq(lsp.spectral, {
+    cmd = nix:shell("spectral-language-server", {
+        "spectral-language-server", "--stdio"
+    }),
+    filetypes = { "json", "yml", "yaml" },
+    settings = {
+        enable = true,
+        run = "onType",
+        validateLanguages = { "yaml", "json", "yml" }
+    }
+})
+
 require 'coq_3p' {
     { src = "repl",
-      sh = "zsh",
-      max_lines = 99,
-      deadline = 500,
-      unsafe = { "rm", "poweroff", "shutdown", "mv", "sudo" }
+        sh = "zsh",
+        max_lines = 99,
+        deadline = 500,
+        unsafe = { "rm", "poweroff", "shutdown", "mv", "sudo" }
     },
     { src = "bc", short_name = "MATH", precision = 6 }
 }
