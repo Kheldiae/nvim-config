@@ -47,11 +47,7 @@ nnoremap <silent> <leader>ft            :NvimTreeToggle<CR>
 
 nnoremap <silent> <leader>td            :Ags TODO<CR>
 
-" Sourcetrail helpers
-nnoremap <silent> <leader>strt          :SourcetrailStartServer<CR>
-nnoremap <silent> <leader>satk          :SourcetrailActivateToken<CR>
-nnoremap <silent> <leader>stfr          :SourcetrailRefresh<CR>
-
+" Http helpers
 nnoremap <silent> <leader>hw            :Http<CR>
 
 " Debugger adapters

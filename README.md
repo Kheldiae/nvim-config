@@ -88,11 +88,6 @@ Keys    | Action                          | Vim command
 `t…`    | _**Tagging**_                   |
 `tt`    | Show symbols pane               | `:Vista`
 `td`    | Search for and list `TODO`s     | `:Ags TODO`
-        |                                 |
-`st…`   | _**[Sourcetrail] integration**_ |
-`strt`  | Start Sourcetrail server        |
-`satk`  | Send position to Sourcetrail    |
-`stfr`  | Refresh Sourcetrail connection  |
 
 This configuration also includes [Visual-Multi] and its keybindings.
 
