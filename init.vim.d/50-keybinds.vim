@@ -38,8 +38,9 @@ nnoremap <silent> <leader>yp            :!yapf -i %<CR>
 " Trouble related keybinds
 nnoremap <silent> <leader>!             :Trouble proj_errs toggle<CR>
 
-" Vista views
+" Vista views and folds handling
 nnoremap <silent> <leader>tt            :Vista<CR>
+nnoremap <silent> <leader>of            :OpenFolds<CR>
 
 " Nvim filetree
 nnoremap <silent> <leader>fr            :NvimTreeRefresh<CR>

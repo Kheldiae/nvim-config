@@ -313,4 +313,4 @@ vim.lsp.handlers['textDocument/documentSymbol'] = require 'lsputil.symbols'.docu
 vim.lsp.handlers['workspace/symbol']            = require 'lsputil.symbols'.workspace_handler
 
 -- stfu
-vim.lsp._unsupported_method                     = function(m) end
+vim.lsp._unsupported_method                     = function(_) end
