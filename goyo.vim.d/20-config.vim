@@ -37,4 +37,3 @@ command OpenFolds %foldopen!
 " Load Goyo from startup
 autocmd vimenter * Goyo
 autocmd vimenter * set nospell
-autocmd vimenter * OpenFolds
