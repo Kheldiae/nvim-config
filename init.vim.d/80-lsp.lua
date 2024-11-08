@@ -179,6 +179,11 @@ lsp_with_coq(lsp.html, {
     })
 })
 
+-- PHP support
+lsp_with_coq(lsp.phpactor, {
+    cmd = nix:shell("phpactor", { "phpactor", "language-server" })
+})
+
 -- Eslint
 lsp_with_coq(lsp.eslint, {
     cmd = nix:shell("nodePackages.vscode-langservers-extracted", {
@@ -284,6 +289,20 @@ lsp_with_coq(lsp.lua_ls, {
 -- Postgres language server
 lsp_with_coq(lsp.postgres_lsp, {
     cmd = nix:shell("postgres-lsp", { "postgres_lsp" })
+})
+
+-- Dockerfile language server
+lsp_with_coq(lsp.dockerls, {
+    cmd = nix:shell("dockerfile-language-server-nodejs", {
+        "docker-langserver", "--stdio"
+    })
+})
+
+-- Docker-compose support
+lsp_with_coq(lsp.docker_compose_language_service, {
+    cmd = nix:shell("docker-compose-language-service", {
+        "docker-compose-langserver", "--stdio"
+    })
 })
 
 -- Third-party Coq (the completion engine) providers
