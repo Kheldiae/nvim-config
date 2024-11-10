@@ -105,9 +105,6 @@ Plug 'benlubas/molten-nvim',    { 'do': ':UpdateRemotePlugins' }
 " Debugging JDTls extension
 Plug 'mfussenegger/nvim-jdtls'
 
-" Communication with Sourcetrail
-Plug 'CoatiSoftware/vim-sourcetrail', { 'on': ['SourcetrailRefresh','SourcetrailStartServer'] }
-
 " Start screen
 Plug 'mhinz/vim-startify'
 

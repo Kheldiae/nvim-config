@@ -98,5 +98,12 @@ require'nvim-web-devicons'.set_icon {
         color = "#51a0cf",
         cterm_color = "075",
         name = "Rockspec"
+    },
+    -- HTTP requests
+    http = {
+        icon = "󰖟",
+        color = "#51a0cf",
+        cterm_color = "075",
+        name = "Http"
     }
 }
