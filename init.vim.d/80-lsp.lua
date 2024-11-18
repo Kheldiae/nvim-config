@@ -227,7 +227,8 @@ lsp_with_coq(lsp.jdtls, {
     cmd = nix:shell("jdt-language-server", {
         "jdtls", "-configuration",
         os.getenv("HOME") .. "/.cache/jdtls/config", "-data",
-        os.getenv("HOME") .. "/.cache/jdtls/workspace"
+        os.getenv("HOME") .. "/.cache/jdtls/workspace",
+        ">&2 /dev/null"
     }),
     filetypes = { "java" },
     cmd_env = { GRADLE_HOME = os.getenv("GRADLE_HOME") },

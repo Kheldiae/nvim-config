@@ -2,7 +2,7 @@ set title
 
 filetype plugin on
 syntax on
-set mouse=a
+set mouse= " No more mouse
 set number
 set linebreak
 set breakindent
