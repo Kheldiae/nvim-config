@@ -31,9 +31,6 @@ let g:startify_disable_at_vimenter=1
 
 let g:copilot_enabled = 0
 
-" Only utility command
-command OpenFolds %foldopen!
-
 " Load Goyo from startup
 autocmd vimenter * Goyo
 autocmd vimenter * set nospell
