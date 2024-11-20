@@ -32,6 +32,7 @@ command LAutoFormatEnable   call SetLAutoFormat(1)
 command LAutoFormatDisable  call SetLAutoFormat(0)
 command LAutoFormatToggle   call SetLAutoFormat(g:_laf_next_state)
 
+" AutoFormatting function, this will just call lsp formatter
 function SetLAutoFormat(state)
     if a:state == 0
         autocmd! laf
