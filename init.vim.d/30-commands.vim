@@ -1,6 +1,3 @@
-" Utility commands for folds
-command OpenFolds !foldopen%
-
 " Shortcut to call Haskell REPL on current file
 command GHCi bot split | term ghci %
 
