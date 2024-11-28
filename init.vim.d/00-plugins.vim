@@ -19,6 +19,10 @@ Plug 'Khelda/vimthemes'
 " File listener for color scheme changer
 Plug 'rktjmp/fwatch.nvim'
 
+" Bookmarks vendor
+" Plug 'tomasky/bookmarks.nvim'
+" Plug 'telescope-nvim/telescope'
+
 " Distraction-free writing
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'

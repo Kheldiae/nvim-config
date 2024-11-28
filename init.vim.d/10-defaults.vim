@@ -2,7 +2,7 @@ set title
 
 filetype plugin on
 syntax on
-set mouse= " No more mouse
+set mouse=a " TODO fix scrolling
 set number
 set linebreak
 set breakindent

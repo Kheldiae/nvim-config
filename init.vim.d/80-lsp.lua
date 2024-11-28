@@ -96,7 +96,14 @@ lsp_with_coq(lsp.elmls, {
 
 -- Rust
 lsp_with_coq(lsp.rust_analyzer, {
-    cmd = nix:shell("rust-analyzer", { "rust-analyzer" })
+    cmd = nix:shell("rust-analyzer", { "rust-analyzer" }),
+    handlers = {
+        ['method'] = function(err, result, context, config)
+            if err ~= nil and err.code == -32802 then
+                return -- nothing there, this should shut its mouth
+            end
+        end
+    }
 })
 
 -- Haskell

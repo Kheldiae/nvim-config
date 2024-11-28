@@ -12,7 +12,7 @@ vim.env['PATH'] = vim.env['PATH'] .. ':' .. nix:path("universal-ctags", "/bin")
 local vnotify = require 'notify'
 
 vnotify.setup {
-    background_colour = "#000000"
+    background_colour = "#262626"
 }
 
 vim.notify = function(msg, ...)
@@ -178,3 +178,6 @@ require 'img-clip'.setup {
 
 -- kitty-scrollback config
 require 'kitty-scrollback'.setup()
+
+-- bookmarks
+-- TODO
