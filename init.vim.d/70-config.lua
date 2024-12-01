@@ -133,7 +133,8 @@ vim.treesitter.language.register('cuda', 'cuda.doxygen')
 -- TreeSitter Context config
 require 'treesitter-context'.setup {
     enable = true,
-    mode = 'cursor'
+    mode = 'cursor',
+    max_lines = 10
 }
 
 -- Image.nvim config

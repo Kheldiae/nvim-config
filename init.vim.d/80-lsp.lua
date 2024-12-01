@@ -94,16 +94,21 @@ lsp_with_coq(lsp.elmls, {
     })
 })
 
+-- Workaround for Rust LSP
+for _, method in ipairs({
+    'textDocument/diagnostic', 'workspace/diagnostic' }) do
+    local default_handler = vim.lsp.handlers[method]
+    vim.lsp.handlers[method] = function(err, result, context, config)
+        if err ~= nil and err.code == -32802 then
+            return     -- stfu
+        end
+        return default_handler(err, result, context, config)
+    end
+end
+
 -- Rust
 lsp_with_coq(lsp.rust_analyzer, {
     cmd = nix:shell("rust-analyzer", { "rust-analyzer" }),
-    handlers = {
-        ['method'] = function(err, result, context, config)
-            if err ~= nil and err.code == -32802 then
-                return -- nothing there, this should shut its mouth
-            end
-        end
-    }
 })
 
 -- Haskell
