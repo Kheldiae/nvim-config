@@ -179,6 +179,3 @@ require 'img-clip'.setup {
 
 -- kitty-scrollback config
 require 'kitty-scrollback'.setup()
-
--- bookmarks
--- TODO

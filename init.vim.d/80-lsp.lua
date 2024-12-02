@@ -240,7 +240,7 @@ lsp_with_coq(lsp.jdtls, {
         "jdtls", "-configuration",
         os.getenv("HOME") .. "/.cache/jdtls/config", "-data",
         os.getenv("HOME") .. "/.cache/jdtls/workspace",
-        ">&2 /dev/null"
+        "-Dlog.level=ALL >&2 /dev/null"
     }),
     filetypes = { "java" },
     cmd_env = { GRADLE_HOME = os.getenv("GRADLE_HOME") },
