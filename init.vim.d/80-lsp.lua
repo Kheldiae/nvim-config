@@ -4,20 +4,21 @@
 
 require 'nix'
 
-local nix                                                          = Nix:new()
-local pscan                                                        = require 'plenary.scandir'
-local path                                                         = require 'plenary.path'
+local nix = Nix:new()
+local pscan = require 'plenary.scandir'
+local path = require 'plenary.path'
 
 ---
 
-local capabilities                                                 = vim.lsp.protocol.make_client_capabilities()
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-local lsp                                                          = require 'lspconfig'
-local util                                                         = require 'lspconfig/util'
-local jdtls                                                        = require 'jdtls'
-local coq                                                          = require 'coq'
-local coql                                                         = require 'coq-lsp'
-local fwatch                                                       = require 'fwatch'
+
+local lsp = require 'lspconfig'
+local util = require 'lspconfig/util'
+local jdtls = require 'jdtls'
+local coq = require 'coq'
+local coql = require 'coq-lsp'
+local fwatch = require 'fwatch'
 
 
 -- Boost LSP using Coq_nvim
@@ -100,7 +101,7 @@ for _, method in ipairs({
     local default_handler = vim.lsp.handlers[method]
     vim.lsp.handlers[method] = function(err, result, context, config)
         if err ~= nil and err.code == -32802 then
-            return     -- stfu
+            return -- stfu
         end
         return default_handler(err, result, context, config)
     end
@@ -240,7 +241,7 @@ lsp_with_coq(lsp.jdtls, {
         "jdtls", "-configuration",
         os.getenv("HOME") .. "/.cache/jdtls/config", "-data",
         os.getenv("HOME") .. "/.cache/jdtls/workspace",
-        "-Dlog.level=ALL >&2 /dev/null"
+        "-Dlog.level=ERROR >&2 /dev/null"
     }),
     filetypes = { "java" },
     cmd_env = { GRADLE_HOME = os.getenv("GRADLE_HOME") },
@@ -256,8 +257,9 @@ lsp_with_coq(lsp.jdtls, {
             -- Nothing here, it's just to capture these
             -- Just treat this handler as another stfu handler
         end,
-        ['language/status'] = function(_, _, _)
-            -- STFU handler for java
+        ['language/status'] = function(_, _, _) end,
+        ['window/logMessage'] = function(_, _, _)
+            -- stfu handler for jdtls useless logs
         end
     },
     on_attach = function(_, _)
