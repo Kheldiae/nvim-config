@@ -1,7 +1,7 @@
 " Custom colorscheme definition, needs to be splitted around the 'if' to make
 " sure to be able to hotswap the colorscheme correctly.
 function SetColor()
-    " Rely on zsh script for dark/liht
+    " Rely on zsh script for dark/light
     if system('zsh -ic _get_theme') =~ 'light'
         set background=light
         colorscheme daedrim
@@ -9,13 +9,17 @@ function SetColor()
         hi NonText                      guifg=#aaaaaa
         hi DiffText                     guibg=#ffdc87
         hi DiffAdd                      guibg=#afffb4
+
+        " Barbar settings
+        hi Tabline                      guifg=#ffffff guibg=#9bb9de
         hi TabLineFill                  guibg=#9bb9de
-        hi TabLineSel                   guifg=#000000
+        hi TabLineSel                   guifg=#292b2f guibg=#eadecc
+        hi BufferCurrentMod             guibg=#eadecc
 
         " CmdLine shennanigans
-        hi NoiceCmdlinePopupBorder  guifg=#8e6d4f
-        hi NoiceCmdlinePopupTitle   guifg=#8e6d4f
-        hi NoiceCmdlineIcon         guifg=#918154
+        hi NoiceCmdlinePopupBorder      guifg=#8e6d4f
+        hi NoiceCmdlinePopupTitle       guifg=#8e6d4f
+        hi NoiceCmdlineIcon             guifg=#918154
 
         " Treesitter highlighting
         hi TSContext guibg=None
@@ -26,15 +30,20 @@ function SetColor()
         hi NonText                      guifg=#6f6f6f
         hi DiffText                     guibg=#644100
         hi DiffAdd                      guibg=#1e5005
+
+        " Barbar settings
+        hi Tabline                      guifg=#ffffff guibg=#303030
         hi TabLineFill                  guibg=#292b2f
-        hi TabLineSel                   guifg=#292b2f
+        hi TabLineSel                   guifg=#292b2f guibg=#918154
+        hi BufferCurrentMod             guibg=#918154
+
         hi BufferCurrentMod             guifg=#ffffff
         hi BufferDefaultCurrentMod      guifg=#ffffff
 
         " CmdLine shennanigans
-        hi NoiceCmdlinePopupBorder  guifg=#8e6d4f
-        hi NoiceCmdlinePopupTitle   guifg=#8e6d4f
-        hi NoiceCmdlineIcon         guifg=#918154
+        hi NoiceCmdlinePopupBorder      guifg=#8e6d4f
+        hi NoiceCmdlinePopupTitle       guifg=#8e6d4f
+        hi NoiceCmdlineIcon             guifg=#918154
 
         " Context highlighting
         hi TSContext guibg=#535353
@@ -51,16 +60,11 @@ function SetColor()
     hi SignColumn guibg=NONE
     hi EndOfBuffer guibg=NONE
 
-    " Translucent BarBar
-    hi TabLine guibg=#303030 guifg=#ffffff
-    hi TabLineSel guibg=#918154
-    "hi TabLineFill guibg=NONE
     hi BufferDefaultCurrent guibg=NONE
     hi BufferDefaultCurrentIcon guibg=NONE
     hi BufferDefaultCurrentSign guibg=NONE
 
     hi BufferCurrent        guibg=NONE
-    hi BufferCurrentMod     guibg=#918154
     hi BufferCurrentIcon    guibg=NONE
     hi BufferCurrentSign    guibg=NONE
 
