@@ -126,6 +126,7 @@ Plug 'vim-latex/vim-latex'
 " Non-plain text document decoder
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'Khelda/Vim-EPUB'
 
 " CSV editor
 Plug 'chrisbra/csv.vim'

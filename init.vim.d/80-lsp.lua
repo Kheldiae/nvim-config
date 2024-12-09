@@ -254,13 +254,11 @@ lsp_with_coq(lsp.jdtls, {
     },
     handlers = {
         ['$/progress'] = function(_, _, _)
-            -- Nothing here, it's just to capture these
+            -- Nothing here, it's just to capture jdtls useless logs
             -- Just treat this handler as another stfu handler
         end,
         ['language/status'] = function(_, _, _) end,
-        ['window/logMessage'] = function(_, _, _)
-            -- stfu handler for jdtls useless logs
-        end
+        ['window/logMessage'] = function(_, _, _) end
     },
     on_attach = function(_, _)
         jdtls.setup_dap({ hotcodereplace = 'auto' })
