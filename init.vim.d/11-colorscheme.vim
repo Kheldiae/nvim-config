@@ -11,8 +11,8 @@ function SetColor()
         hi DiffAdd                      guibg=#afffb4
 
         " Barbar settings
-        hi Tabline                      guifg=#ffffff guibg=#9bb9de
-        hi TabLineFill                  guibg=#9bb9de
+        hi Tabline                      guifg=#ffffff guibg=#8aa3a2
+        hi TabLineFill                  guibg=#8aa3a2
         hi TabLineSel                   guifg=#292b2f guibg=#eadecc
         hi BufferCurrentMod             guibg=#eadecc
 
