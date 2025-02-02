@@ -165,6 +165,14 @@ lsp_with_coq(lsp.purescriptls, {
     })
 })
 
+-- Shell
+lsp_with_coq(lsp.bashls, {
+    cmd = nix:shell("bash-language-server", {
+        "bash-language-server", "start"
+    }),
+    filetypes = { "bash", "sh", "zsh" }
+})
+
 -- Nix
 lsp_with_coq(lsp.nixd, { cmd = nix:shell("nixd", { "nixd" }) })
 
