@@ -23,6 +23,9 @@ Plug 'rktjmp/fwatch.nvim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
+" Jira integration for project management
+Plug 'janBorowy/jirac.nvim'
+
 " Super-fast statusbar and tab bar
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'romgrk/barbar.nvim'

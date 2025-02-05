@@ -56,7 +56,7 @@
           '';
         });
 
-        addGoyo = neovim:
+        addProfiles = neovim:
           pkgs.symlinkJoin {
             inherit (neovim) name meta;
             paths = [ neovim ];
@@ -68,9 +68,9 @@
       in {
         legacyPackages = pkgs;
         packages.default = self.packages.${system}.neovim;
-        packages."neovim" = addGoyo wrappedNeovim;
-        packages."neovim-offline" = addGoyo wrappedNeovimOffline;
-        packages."neovim-full" = addGoyo (wrappedNeovim.override (prev: {
+        packages."neovim" = addProfiles wrappedNeovim;
+        packages."neovim-offline" = addProfiles wrappedNeovimOffline;
+        packages."neovim-full" = addProfiles (wrappedNeovim.override (prev: {
           wrapperArgs = prev.wrapperArgs ++ [
             "--suffix"
             "PATH"
@@ -82,8 +82,8 @@
             "${bootstrap.packages}/bin"
           ];
         }));
-        packages."neovim-full-offline" = addGoyo (wrappedNeovimOffline.override
-          (prev: {
+        packages."neovim-full-offline" = addProfiles
+          (wrappedNeovimOffline.override (prev: {
             wrapperArgs = prev.wrapperArgs
               ++ [ "--suffix" "PATH" ":" "${bootstrap.lspPackages}/bin" ];
           }));
@@ -95,6 +95,10 @@
         apps.goyo = {
           type = "app";
           program = "${self.packages.${system}.neovim}/bin/goyo";
+        };
+        apps.jirac = {
+          type = "app";
+          program = "${self.packages.${system}.neovim}/bin/jirac";
         };
       });
 }
