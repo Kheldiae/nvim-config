@@ -58,18 +58,6 @@
   "deepClone": false,
   "leaveDotGit": false
 }
-,"janBorowy/jirac.nvim":{
-  "url": "https://github.com/janBorowy/jirac.nvim",
-  "rev": "566b12c6981042abaa5596aa26b941e6d852775d",
-  "date": "2025-02-05T22:18:14+01:00",
-  "path": "/nix/store/wrmx5vr8vvi19xjivsf59404ggk2w9nb-jirac.nvim",
-  "sha256": "0fn0a8sph3i2hvlss4b0h4w5qmq6s8kpv58knnwgf8hwy7fvqvvy",
-  "hash": "sha256-fm+83fEcIve4tROVfSfSBldcOIFgEa3phiIOeDVSwDo=",
-  "fetchLFS": false,
-  "fetchSubmodules": true,
-  "deepClone": false,
-  "leaveDotGit": false
-}
 ,"nvim-lualine/lualine.nvim":{
   "url": "https://github.com/nvim-lualine/lualine.nvim",
   "rev": "f4f791f67e70d378a754d02da068231d2352e5bc",
@@ -113,18 +101,6 @@
   "path": "/nix/store/d371g9f6hz7ynxa39lwij3z55yv8ilr0-nui.nvim",
   "sha256": "1m4vlf9qcs01a8qrq3salcz966sp8cpf01gbrg8dbf255vzc8kp9",
   "hash": "sha256-6U7E/i5FuNXQy+sF4C5DVxuTPqNKD5wxUgFohpOjm9Q=",
-  "fetchLFS": false,
-  "fetchSubmodules": true,
-  "deepClone": false,
-  "leaveDotGit": false
-}
-,"grapp-dev/nui-components.nvim":{
-  "url": "https://github.com/grapp-dev/nui-components.nvim",
-  "rev": "caecfe2089e5ffbe99c2b0e0468da91990263a90",
-  "date": "2024-05-11T18:36:04+02:00",
-  "path": "/nix/store/3ci2jy2mgk0jv9qb1vmmfssh4rvsr363-nui-components.nvim",
-  "sha256": "13gkk0m5rfjg2k0nbfgpys9x5758818a4fwl6vxv3jsd73gl4wlj",
-  "hash": "sha256-knJC3zhNy7H7NpQ7olBAqJzSk/b3uWXBFE+6XCqY840=",
   "fetchLFS": false,
   "fetchSubmodules": true,
   "deepClone": false,
