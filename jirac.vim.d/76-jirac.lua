@@ -2,10 +2,17 @@
 -- Jirac configuration
 --
 
--- TODO secrecy functions
--- maybe a sops call
+require 'secrets'
+local scr = Scr:new()
 
+-- Jirac IDE integration
 require 'jirac'.setup {
-    -- TODO auth
-    -- TODO config
+    email = scr:fetch("email"),
+    domain = scr:fetch("jiracdom"),
+    api_key = scr:fetch("api_key"),
+    config = {
+        keymaps = {}
+        -- TODO more advanced options
+        -- TODO test launch first
+    }
 }

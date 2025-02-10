@@ -40,6 +40,7 @@ Plug 'mikesmithgh/kitty-scrollback.nvim'
 
 " Floating box for search stuff
 Plug 'MunifTanjim/nui.nvim'
+Plug 'grapp-dev/nui-components.nvim'
 Plug 'folke/noice.nvim'
 
 " Secure per-project exrc

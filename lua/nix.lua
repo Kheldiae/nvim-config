@@ -38,7 +38,7 @@ function Nix:shell(pkg, cmd)
     then        -- Generate nix shell wrapper
         table.insert(self.fetchlist, pkg)
         local cmdl = { "nix", "--extra-experimental-features", "nix-command flakes", "shell", self.conf_root .. "#" .. pkg, "-c" }
-        for k, el in pairs(cmd) do
+        for _, el in pairs(cmd) do
             table.insert(cmdl, el)
         end
         return cmdl
@@ -54,7 +54,7 @@ function _G.nixsh_prefetch()
         return
     end
     local args = { "--extra-experimental-features", "nix-command flakes", "build", "--quiet", "--no-link" }
-    for key, value in pairs(_G.nix.fetchlist) do
+    for _, value in pairs(_G.nix.fetchlist) do
         table.insert(args, _G.nix.conf_root .. '#' .. value)
     end
     vim.notify("Prefetching language servers, hang tight...", "info", op)

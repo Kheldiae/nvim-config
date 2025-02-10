@@ -63,6 +63,9 @@
             postBuild = ''
               sed 's/" "$@"/;vim.g.startGoyo=1" "$@"/' ${neovim}/bin/nvim > $out/bin//goyo
               chmod +x $out/bin/goyo
+
+              sed 's/" "$@"/;vim.g.startJirac=1" "$@"/' ${neovim}/bin/jirac > $out/bin//jirac
+              chmod +x $out/bin/jirac
             '';
           };
       in {
