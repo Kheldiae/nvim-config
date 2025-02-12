@@ -96,9 +96,5 @@
           type = "app";
           program = "${self.packages.${system}.neovim}/bin/goyo";
         };
-        apps.jirac = {
-          type = "app";
-          program = "${self.packages.${system}.neovim}/bin/jirac";
-        };
       });
 }
