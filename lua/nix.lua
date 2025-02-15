@@ -13,12 +13,12 @@ end
 
 function Nix:new()
     if _G.nix then
-        return _G.nix   -- Invoke global instance
+        return _G.nix -- Invoke global instance
     end
     local t = { conf_root = "", fetchlist = {} }
     t.conf_root = vim.api.nvim_list_runtime_paths()[1]
     setmetatable(t, { __index = self })
-    _G.nix = t          -- Pin global instance
+    _G.nix = t -- Pin global instance
     return t
 end
 
@@ -26,7 +26,9 @@ function Nix:path(pkg, path)
     if has_nix
     then
         table.insert(self.fetchlist, pkg)
-        local drv = io.popen("nix --extra-experimental-features 'nix-command flakes' build --quiet --no-link --print-out-paths " .. self.conf_root .. "#" .. pkg):read()
+        local drv = io.popen(
+        "nix --extra-experimental-features 'nix-command flakes' build --quiet --no-link --print-out-paths " ..
+        self.conf_root .. "#" .. pkg):read()
         return drv .. path
     else
         return ""
@@ -35,9 +37,10 @@ end
 
 function Nix:shell(pkg, cmd)
     if has_nix and (vim.call('executable', cmd[1]) == 0)
-    then        -- Generate nix shell wrapper
+    then -- Generate nix shell wrapper
         table.insert(self.fetchlist, pkg)
-        local cmdl = { "nix", "--extra-experimental-features", "nix-command flakes", "shell", self.conf_root .. "#" .. pkg, "-c" }
+        local cmdl = { "nix", "--extra-experimental-features", "nix-command flakes", "shell", self.conf_root ..
+        "#" .. pkg, "-c" }
         for _, el in pairs(cmd) do
             table.insert(cmdl, el)
         end
