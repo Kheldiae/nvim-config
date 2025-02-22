@@ -192,11 +192,11 @@
 }
 ,"nvim-treesitter/nvim-treesitter":{
   "url": "https://github.com/nvim-treesitter/nvim-treesitter",
-  "rev": "6d957c22cb48a734b009a69d03c18d20042c4754",
-  "date": "2025-02-13T06:54:33Z",
-  "path": "/nix/store/p0w68w0mzvyj510mzax6rc8f8gssg4va-nvim-treesitter",
-  "sha256": "0c0axby1a7gzq41n8ax422p4kdkiyk4cv19jx5gmqgclgmrk57ww",
-  "hash": "sha256-nJ8yc32UPVxf6TKFzcj0cbZJrhCkK2QDwf8dFfzqCjA=",
+  "rev": "00a513f87ee3c339c2024b08db3eb63ba7736ed6",
+  "date": "2025-02-15T09:39:43Z",
+  "path": "/nix/store/crn5iw91jbihsbi4xwf4kfkcfl4iqfif-nvim-treesitter",
+  "sha256": "078jbpgj8abahycz775s0nng2v82gd1rxj6nrybkg9r0ah0b5zrk",
+  "hash": "sha256-M/+yAFQgpzeXz9bInkN7Am3xrAW6nPOZh2opJN9dEh0=",
   "fetchLFS": false,
   "fetchSubmodules": true,
   "deepClone": false,
@@ -276,11 +276,11 @@
 }
 ,"neovim/nvim-lspconfig":{
   "url": "https://github.com/neovim/nvim-lspconfig",
-  "rev": "6c17f8656f667727b27f5f598463afedb7791b18",
-  "date": "2025-02-10T12:00:17Z",
-  "path": "/nix/store/bnh7bq0dfd6wkpwsv55jgcakadjw8aij-nvim-lspconfig",
-  "sha256": "1v1kyfmckqwv6va3fpa19rdwlmfjns903p9ndpxcnhzmasj9bp5d",
-  "hash": "sha256-rdyVpFb1Q8v6bTbdAZK20lXKW05BXTfUNpvjyarzM+w=",
+  "rev": "7af2c37192deae28d1305ae9e68544f7fb5408e1",
+  "date": "2025-02-14T08:29:26-08:00",
+  "path": "/nix/store/722fv749vg6fjd9brhg6kv6q2ckmdy0r-nvim-lspconfig",
+  "sha256": "1agxd3n38g81irdkcwkzzdsdfnlip5fa8413b98ql8g1whavr3hx",
+  "hash": "sha256-HY68FeThIYpRWiMQpFy5kVrXdPt/cjZbjgE9NOxo/ak=",
   "fetchLFS": false,
   "fetchSubmodules": true,
   "deepClone": false,
@@ -922,4 +922,4 @@
   "deepClone": false,
   "leaveDotGit": false
 }
-}, "packages": ["universal-ctags","tree-sitter","wl-clipboard-x11","wl-clipboard-x11","vscode-extensions.vscjava.vscode-java-debug","tree-sitter"], "lsp-packages": ["python3Packages.python-lsp-server","elmPackages.elm-language-server","rust-analyzer","haskell-language-server","ccls","cmake-language-server","jsonnet-language-server","ocamlPackages.ocaml-lsp","nodePackages.vim-language-server","nodePackages.purescript-language-server","bash-language-server","nixd","texlab","nodePackages.typescript-language-server","nodePackages.vscode-langservers-extracted","nodePackages.vscode-langservers-extracted","phpactor","nodePackages.vscode-langservers-extracted","spectral-language-server","marksman","jdt-language-server","kotlin-language-server","coqPackages_8_16.coq-lsp","dot-language-server","lua-language-server","postgres-lsp","dockerfile-language-server-nodejs","docker-compose-language-service","marksman","texlab","dot-language-server","spectral-language-server"]}
+}, "packages": ["universal-ctags","tree-sitter","wl-clipboard-x11","wl-clipboard-x11","vscode-extensions.vscjava.vscode-java-debug","mermaid-cli","tree-sitter"], "lsp-packages": ["python3Packages.python-lsp-server","elmPackages.elm-language-server","rust-analyzer","haskell-language-server","ccls","cmake-language-server","jsonnet-language-server","ocamlPackages.ocaml-lsp","nodePackages.vim-language-server","nodePackages.purescript-language-server","bash-language-server","nixd","texlab","nodePackages.typescript-language-server","nodePackages.vscode-langservers-extracted","nodePackages.vscode-langservers-extracted","phpactor","nodePackages.vscode-langservers-extracted","spectral-language-server","marksman","jdt-language-server","kotlin-language-server","coqPackages_8_16.coq-lsp","dot-language-server","lua-language-server","postgres-lsp","dockerfile-language-server-nodejs","docker-compose-language-service","marksman","texlab","dot-language-server","spectral-language-server"]}

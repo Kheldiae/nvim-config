@@ -89,6 +89,9 @@ function SetColor()
     " Python highlights fixes
     hi link @variable.builtin Identifier
 
+    " Typescript highlight fixes
+    hi link typescriptVariable Statement
+
     " TreesitterContext fix
     hi link TreesitterContext TSContext
 endfunction

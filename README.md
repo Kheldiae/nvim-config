@@ -6,6 +6,10 @@ That's right! You can take my Neovim configuration for a spin _right now_, witho
 
 Just clone this repository and run the `nvim` script at its root!
 
+### Contributing
+
+Please don't. This is more of a personal configuration made public, this is not meant for open contribution... If you intend to publish modifications on this configuration, please fork this repository.
+
 ## Install it
 
 This repository follows the format for Neovim's runtime directory, meaning you can clone it directly into `~/.config/nvim` on your system.

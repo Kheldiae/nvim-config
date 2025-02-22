@@ -14,12 +14,9 @@ require 'diagram'.setup {
         require 'diagram.integrations.markdown'
     },
     renderer_options = {
-        mermaid = { theme = "forest" },
+        mermaid = { theme = "dark", background = "transparent" },
         plantuml = { charset = "utf-8" },
         d2 = { theme_id = 1, dark_theme_id = 1 },
-        gnuplot = {
-            theme = "dark",
-            size = "400,200"
-        }
+        gnuplot = { theme = "dark", size = "400,200" }
     }
 }
